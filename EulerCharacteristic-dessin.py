@@ -18,6 +18,17 @@ def max_value(inputlist):
 def perm2str(perm):
     return monoStr[mono.index(perm)];
 
+def readableNestedList(nestedList):
+    nestedListStr = "[\n"
+    for subList in nestedList:
+        nestedListStr += str(subList) + ", \n"
+    nestedListStr += "]"
+    return nestedListStr
+
+def faces2init(faces):
+    return [f[0] for f in faces]
+
+
 faces = []
 nEdges = max_value(b)
 for e in range(1, nEdges + 1):
@@ -39,14 +50,15 @@ for e in range(1, nEdges + 1):
         faces.append(face)
 
 
-def faces2init(faces):
-    return [f[0] for f in faces]
-
-
+# Euler Characteristic
 nVertices = len(b) + len(w)
 nFaces = len(faces)
 chi = nVertices - nEdges + nFaces
-print(f"Faces: {faces}")
+
+
+# Print results
+# print(faces)
+print(f"Faces: {readableNestedList(faces)}")
 print(f"Initial edges: {faces2init(faces)}")
 print(f"No. faces: {nFaces}")
 print(f"No. edges: {nEdges}")
