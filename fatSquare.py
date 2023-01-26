@@ -20,7 +20,5 @@ alpha = morphisms[1]
 
 
 # Euler Characteristic
-F.findEulerCharacteristic()
-G.findEulerCharacteristic()
 F.printEulerCharacteristic()
 G.printEulerCharacteristic()

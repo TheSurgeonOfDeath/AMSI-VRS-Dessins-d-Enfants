@@ -37,6 +37,15 @@ class Dessin:
         self.mono = [b, w]
         self.monoStr = ['b', 'w']
         
+        # Euler characteristic
+        self.Faces = self.findFaces()
+        self.initFaces = self.faces2init()
+        self.nFaces = len(self.Faces)
+        self.nEdges = max_value(self.b)
+        self.Edges = range(1, self.nEdges + 1)
+        self.Vertices = self.b + self.w
+        self.nVertices = len(self.b) + len(self.w)
+        self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
     def perm2str(self, perm):
         return self.monoStr[self.mono.index(perm)];
@@ -63,16 +72,7 @@ class Dessin:
                     fNew = (eNew, self.perm2str(dNew))
                 faces.append(face)
         return(faces)
-
-    def findEulerCharacteristic(self):
-        self.Faces = self.findFaces()
-        self.initFaces = self.faces2init()
-        self.nFaces = len(self.Faces)
-        self.nEdges = max_value(self.b)
-        self.Edges = range(1, self.nEdges + 1)
-        self.Vertices = self.b + self.w
-        self.nVertices = len(self.b) + len(self.w)
-        self.EulerChi = self.nVertices - self.nEdges + self.nFaces
+        
 
     def faces2init(self):
         return [f[0] for f in self.Faces]
