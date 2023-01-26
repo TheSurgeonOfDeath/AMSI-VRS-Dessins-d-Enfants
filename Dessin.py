@@ -104,8 +104,11 @@ class Dessin:
         print(f"Euler Characteristic: {self.EulerChi}")
 
     def isConnected(self):
-    bPowerSet = list(powerset(self.b))[1:-1]
-    wPowerSet = list(powerset(self.w))[1:-1]
-    bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
-    wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
-    return any(x in bSubsets for x in wSubsets)
+        # For a proper subset B of cycles of b, let S be the edge set of B and
+        # for a proper subset W of cycles of w, let T be the edge set of W.
+        # If any S = T, the dessin is disconnected. If all S \neq T, it is connected.
+        bPowerSet = list(powerset(self.b))[1:-1]
+        wPowerSet = list(powerset(self.w))[1:-1]
+        bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
+        wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
+        return all(x not in bSubsets for x in wSubsets)
