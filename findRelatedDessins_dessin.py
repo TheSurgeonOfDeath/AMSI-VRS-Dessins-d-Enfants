@@ -1,3 +1,5 @@
+# Find all dessins that a given dessin can be morphed to
+
 from Dessin_Morphisms import max_value
 from functools import reduce
 
