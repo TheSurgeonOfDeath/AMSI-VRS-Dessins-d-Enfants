@@ -11,8 +11,8 @@ w = [(8,7,6,5,4,3,2,1)]
 nEdges = max_value(b)
 facts = factors(nEdges)
 
-dessins = []
-for fact in facts:
-    for i in range(1, fact + 1):
-        
+# dessins = []
+# for fact in facts:
+#     for i in range(1, fact + 1):
+
 
