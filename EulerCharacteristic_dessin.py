@@ -1,5 +1,9 @@
 # Find the Euler characteristic of a dessin given the black and white permutations
 
+from permute import permute
+from max_value import max_value
+from readableNestedList import readableNestedList
+
 # Fat square
 # b = [(1,3,2,4), (5,8,6,7)]
 # w = [(1,8,2,7), (3,6,4,5)]
@@ -21,14 +25,7 @@ monoStr = ['b', 'w']
 monoDict = {'b': b, 'w': w}
 
 
-def permute(permutation, n):
-    for row in permutation:
-        for i in range(len(row)):
-            if row[i] == n:
-                return row[(i + 1) % len(row)]
 
-def max_value(inputlist):
-    return max(max(sublist) for sublist in inputlist)
 
 def perm2str(perm):
     return monoStr[mono.index(perm)];
@@ -65,13 +62,6 @@ chi = nVertices - nEdges + nFaces
 
 
 # Print results
-def readableNestedList(nestedList):
-    nestedListStr = "[\n"
-    for subList in nestedList:
-        nestedListStr += str(subList) + "\n"
-    nestedListStr += "]"
-    return nestedListStr
-
 def faces2init(faces):
     return [f[0] for f in faces]
 

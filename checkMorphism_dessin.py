@@ -1,14 +1,10 @@
+from permute import permute
+
 alpha = [1, 1, 2, 2, 3, 3, 4, 4]
 fw = [(1, 8, 7, 2), (3,4,5,6)]
 fb = [(1,2,4,3), (7,8,6,5)]
 gw = [(1,4), (2,3)]
 gb = [(1,2), (3,4)]
-
-def permute(permutation, n):
-    for row in permutation:
-        for i in range(len(row)):
-            if row[i] == n:
-                return row[(i + 1) % len(row)]
 
 for e in range(1, len(alpha)+1):
     #alpha fb = gb alpha
