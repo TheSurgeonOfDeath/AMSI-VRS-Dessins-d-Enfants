@@ -1,4 +1,4 @@
-from permute import permute
+from Dessin_Morphisms import permute
 
 alpha = [1, 1, 2, 2, 3, 3, 4, 4]
 fw = [(1, 8, 7, 2), (3,4,5,6)]

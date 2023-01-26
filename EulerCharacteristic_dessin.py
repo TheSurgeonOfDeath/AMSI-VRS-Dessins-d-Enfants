@@ -1,7 +1,6 @@
 # Find the Euler characteristic of a dessin given the black and white permutations
 
-from permute import permute
-from max_value import max_value
+from Dessin_Morphisms import permute, max_value
 from readableNestedList import readableNestedList
 
 # Fat square
@@ -23,8 +22,6 @@ w = [(1,3,4,2)]
 mono = [b, w]
 monoStr = ['b', 'w']
 monoDict = {'b': b, 'w': w}
-
-
 
 
 def perm2str(perm):
