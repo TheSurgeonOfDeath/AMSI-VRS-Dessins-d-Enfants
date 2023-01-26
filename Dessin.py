@@ -2,6 +2,8 @@
 
 from itertools import product
 from readableNestedList import readableNestedList
+from itertools import chain, combinations
+
 
 def max_value(inputlist):
     return max(max(sublist) for sublist in inputlist)
@@ -27,6 +29,12 @@ def findMorphisms(F, G):
     Maps = list(product(range(1, nEdgesG + 1), repeat = nEdgesF))
     surjMaps = [Map for Map in Maps if set(range(1, nEdgesG + 1)) <= set(Map)]
     return [surjMap for surjMap in surjMaps if isMorphism(surjMap, F, G)]
+
+def powerset(iterable):
+    # source: https://docs.python.org/3/library/itertools.html#itertools-recipes
+    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 
 
 class Dessin:
@@ -94,3 +102,10 @@ class Dessin:
         print(f"No. edges: {self.nEdges}")
         print(f"No. vertices: {self.nVertices}")
         print(f"Euler Characteristic: {self.EulerChi}")
+
+    def isConnected(self):
+    bPowerSet = list(powerset(self.b))[1:-1]
+    wPowerSet = list(powerset(self.w))[1:-1]
+    bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
+    wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
+    return any(x in bSubsets for x in wSubsets)
