@@ -16,6 +16,6 @@ F = Dessin(b, w)
 facts = factors(F.nEdges)
 print(facts)
 
-dessins = []
-for fact in facts:
-    for i in range(1, fact + 1):
+# dessins = []
+# for fact in facts:
+#     for i in range(1, fact + 1):
