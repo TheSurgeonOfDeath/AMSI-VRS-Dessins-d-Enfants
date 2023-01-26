@@ -19,7 +19,7 @@ F = Dessin(fb, fw)
 # w = [(1,2,6,7,5), (3,4)]
 # F = Dessin(b, w)
 
-# 2-torus
+# 4-onion
 gb = [(1,2,3,4)]
 gw = [(1,3,4,2)]
 G = Dessin(gb, gw)
