@@ -77,7 +77,7 @@ class Dessin:
     def faces2init(self):
         return [f[0] for f in self.Faces]
 
-    def printProperties(self):
+    def printEulerCharacteristic(self):
         print(f"Faces: {readableNestedList(self.Faces)}")
         print(f"Initial edges: {self.initFaces}")
         print(f"No. faces: {self.nFaces}")
