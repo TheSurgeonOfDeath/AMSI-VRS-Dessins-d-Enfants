@@ -3,7 +3,7 @@
 import json
 from itertools import product
 from readableNestedList import readableNestedList
-from itertools import chain, combinations
+from itertools import chain, combinations, permutations
 from sympy.combinatorics.named_groups import SymmetricGroup
 
 
