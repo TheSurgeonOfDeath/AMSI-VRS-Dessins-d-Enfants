@@ -36,6 +36,12 @@ def powerset(iterable):
     s = list(iterable)
     return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 
+def areIsomorphic(F, G):
+    if F.nEdges != G.nEdges:
+        return False
+    alphas = findMorphisms(F, G)
+    return any(set(F.Edges) == set(alpha) for alpha in alphas)
+
 
 class Dessin:
     def __init__(self, b, w):
@@ -55,30 +61,29 @@ class Dessin:
         self.nVertices = len(self.b) + len(self.w)
         self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
-    def perm2str(self, perm):
-        return self.monoStr[self.mono.index(perm)];
-
     def findFaces(self):
         faces = []
         nEdges = max_value(self.b)
         for e in range(1, nEdges + 1):
-            for d in self.mono:
+            for i in range(len(self.monoStr)):
                 face = []
-                f0 = (e, self.perm2str(d))
+                f0 = (e, self.monoStr[i])
                 if any(f0 in face for face in faces):
                     continue
                 face.append(f0)
-                eNew = permute(d, e)
-                dNew = self.mono[self.mono.index(d) - 1]
-                fNew = (eNew, self.perm2str(dNew))
+                eNew = permute(self.mono[i], e)
+                dNewIdx = i - 1
+                fNew = (eNew, self.monoStr[dNewIdx])
                 it = 0;
                 while fNew != f0:
                     it += 1
                     face.append(fNew)
-                    eNew = permute(dNew, eNew)
-                    dNew = self.mono[self.mono.index(dNew) - 1]
-                    fNew = (eNew, self.perm2str(dNew))
+                    eNew = permute(self.mono[dNewIdx], eNew)
+                    dNewIdx = i - 1 - it % 2
+                    fNew = (eNew, self.monoStr[dNewIdx])
                 faces.append(face)
+        # if self.b == self.w:
+        #     faces *= 2
         return(faces)
         
 
