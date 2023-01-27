@@ -17,6 +17,7 @@ print(S8)
 posDes = G * G
 
 
+
 p = Permutation([1, 2, 0, 4, 5, 3, 6, 7])
 print(p)
 print(p in G)

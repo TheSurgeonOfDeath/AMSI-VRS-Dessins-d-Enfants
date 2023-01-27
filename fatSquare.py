@@ -1,4 +1,4 @@
-from Dessin2 import Dessin, findMorphisms
+from Dessin import Dessin, findMorphisms
 from readableNestedList import readableNestedList
 
 

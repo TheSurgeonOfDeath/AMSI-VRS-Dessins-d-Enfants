@@ -1,4 +1,4 @@
-from Dessin2 import Dessin
+from Dessin import Dessin
 
 fb = [(3,2,1),(4,5),(6,7),(8,9)]
 fw = [(1,5),(2,3,4),(7,8),(9,6)]
