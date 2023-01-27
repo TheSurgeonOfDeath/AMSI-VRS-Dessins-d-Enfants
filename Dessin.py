@@ -114,8 +114,8 @@ class Dessin:
         self.Faces = self.findFaces()
         self.initFaces = self.faces2init()
         self.nFaces = len(self.Faces)
-        self.nEdges = max_value(self.b)
-        self.Edges = range(1, self.nEdges + 1)
+        # self.nEdges = max_value(self.b)
+        # self.Edges = range(1, self.nEdges + 1)
         self.Vertices = self.b + self.w
         self.nVertices = len(self.b) + len(self.w)
         self.EulerChi = self.nVertices - self.nEdges + self.nFaces
