@@ -1,5 +1,6 @@
 # Module for dessins
 
+import json
 from itertools import product
 from readableNestedList import readableNestedList
 from itertools import chain, combinations
@@ -40,8 +41,8 @@ def powerset(iterable):
 def areIsomorphic(F, G):
     if F.nEdges != G.nEdges:
         return False
-    alphas = findMorphisms(F, G)
-    return any(set(F.Edges) == set(alpha) for alpha in alphas)
+    alphas = list(permutations(F.Edges))
+    return any(isMorphism(alpha, F, G) for alpha in alphas)
 
 def generate_dessins(n):
     G = SymmetricGroup(n)
@@ -57,8 +58,8 @@ def generate_dessins(n):
     dessins = []
     for pair in SnCyclesSquared:
         des = Dessin(pair[0], pair[1])
-        # if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins):
-        if des.isConnected():
+        # if des.isConnected():
+        if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins):
             dessins.append(des)
     return dessins
 
@@ -76,8 +77,8 @@ class Dessin:
         # self.Faces = self.findFaces()
         # self.initFaces = self.faces2init()
         # self.nFaces = len(self.Faces)
-        # self.nEdges = max_value(self.b)
-        # self.Edges = range(1, self.nEdges + 1)
+        self.nEdges = max_value(self.b)
+        self.Edges = range(1, self.nEdges + 1)
         # self.Vertices = self.b + self.w
         # self.nVertices = len(self.b) + len(self.w)
         # self.EulerChi = self.nVertices - self.nEdges + self.nFaces
@@ -136,3 +137,7 @@ class Dessin:
         bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
         wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
         return all(x not in bSubsets for x in wSubsets)
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True, indent=4)
