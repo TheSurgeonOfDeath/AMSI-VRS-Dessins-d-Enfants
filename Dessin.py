@@ -3,6 +3,7 @@
 from itertools import product
 from readableNestedList import readableNestedList
 from itertools import chain, combinations
+from sympy.combinatorics.named_groups import SymmetricGroup
 
 
 def max_value(inputlist):
@@ -42,6 +43,26 @@ def areIsomorphic(F, G):
     alphas = findMorphisms(F, G)
     return any(set(F.Edges) == set(alpha) for alpha in alphas)
 
+def generate_dessins(n):
+    G = SymmetricGroup(n)
+    Sn = list(G.generate(method = 'coset', af=False))
+
+    # write permutations in cyclic form, make cycles tuples and rightshift +1
+    SnCycles = [[tuple(e + 1 for e in cycle) for cycle in p.full_cyclic_form] for p in Sn]
+
+    # list of pairs of permutations (in cyclic form) in Sn
+    SnCyclesSquared = list(product(SnCycles, repeat = 2))
+
+    # Find all valid dessins
+    dessins = []
+    for pair in SnCyclesSquared:
+        des = Dessin(pair[0], pair[1])
+        # if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins):
+        if des.isConnected():
+            dessins.append(des)
+    return dessins
+
+
 
 class Dessin:
     def __init__(self, b, w):
@@ -52,14 +73,14 @@ class Dessin:
         self.monoStr = ['b', 'w']
         
         # Euler characteristic
-        self.Faces = self.findFaces()
-        self.initFaces = self.faces2init()
-        self.nFaces = len(self.Faces)
-        self.nEdges = max_value(self.b)
-        self.Edges = range(1, self.nEdges + 1)
-        self.Vertices = self.b + self.w
-        self.nVertices = len(self.b) + len(self.w)
-        self.EulerChi = self.nVertices - self.nEdges + self.nFaces
+        # self.Faces = self.findFaces()
+        # self.initFaces = self.faces2init()
+        # self.nFaces = len(self.Faces)
+        # self.nEdges = max_value(self.b)
+        # self.Edges = range(1, self.nEdges + 1)
+        # self.Vertices = self.b + self.w
+        # self.nVertices = len(self.b) + len(self.w)
+        # self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
     def findFaces(self):
         faces = []
@@ -82,23 +103,21 @@ class Dessin:
                     dNewIdx = i - 1 - it % 2
                     fNew = (eNew, self.monoStr[dNewIdx])
                 faces.append(face)
-        # if self.b == self.w:
-        #     faces *= 2
         return(faces)
         
 
     def faces2init(self):
         return [f[0] for f in self.Faces]
 
-    # def calcEulerChi(self):
-    #     self.Faces = self.findFaces()
-    #     self.initFaces = self.faces2init()
-    #     self.nFaces = len(self.Faces)
-    #     self.nEdges = max_value(self.b)
-    #     self.Edges = range(1, self.nEdges + 1)
-    #     self.Vertices = self.b + self.w
-    #     self.nVertices = len(self.b) + len(self.w)
-    #     self.EulerChi = self.nVertices - self.nEdges + self.nFaces
+    def calcEulerChi(self):
+        self.Faces = self.findFaces()
+        self.initFaces = self.faces2init()
+        self.nFaces = len(self.Faces)
+        self.nEdges = max_value(self.b)
+        self.Edges = range(1, self.nEdges + 1)
+        self.Vertices = self.b + self.w
+        self.nVertices = len(self.b) + len(self.w)
+        self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
     def printEulerCharacteristic(self):
         print(f"Faces: {readableNestedList(self.Faces)}")
