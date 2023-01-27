@@ -1,0 +1,3 @@
+[
+    "{\"py/object\": \"Dessin.Dessin\", \"b\": [{\"py/tuple\": [1]}], \"w\": {\"py/id\": 1}, \"mono\": [{\"py/id\": 1}, {\"py/id\": 1}], \"monoStr\": [\"b\", \"w\"], \"Faces\": [[{\"py/tuple\": [1, \"b\"]}, {\"py/tuple\": [1, \"w\"]}]], \"initFaces\": [{\"py/tuple\": [1, \"b\"]}], \"nFaces\": 1, \"nEdges\": 1, \"Edges\": {\"py/reduce\": [{\"py/type\": \"builtins.range\"}, {\"py/tuple\": [1, 2, 1]}]}, \"Vertices\": [{\"py/tuple\": [1]}, {\"py/tuple\": [1]}], \"nVertices\": 2, \"EulerChi\": 2}"
+]
