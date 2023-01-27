@@ -1,7 +1,7 @@
 # Find the Euler characteristic of a dessin given the black and white permutations
 
 # from Dessin_Morphisms import permute, max_value
-from Dessin import Dessin, findMorphisms
+from Dessin2 import Dessin, findMorphisms
 from readableNestedList import readableNestedList
 
 # Fat square

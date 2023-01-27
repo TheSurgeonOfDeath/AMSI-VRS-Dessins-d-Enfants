@@ -1,6 +1,6 @@
 # Find all dessins that a given dessin can be morphed to
 
-from Dessin import Dessin, findMorphisms
+from Dessin2 import Dessin, findMorphisms
 from functools import reduce
 
 def factors(n):   
