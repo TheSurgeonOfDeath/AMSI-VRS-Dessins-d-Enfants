@@ -14,14 +14,19 @@ import time
 #     score2 = json.load(f)
 # print(score2)
 
+# order
+n = 6
+
+
+# Generate dessins
 tic = time.perf_counter()
-n = 5
 dessins = generate_dessins(n)
-# print(len(dessins))
+print(len(dessins))
 for des in dessins: 
     des.calcEulerChi()
 toc = time.perf_counter()
 print(f"Generating time: {toc - tic:0.4f} seconds")
+
 
 # write dessin to file
 tic = time.perf_counter()
@@ -32,13 +37,13 @@ toc = time.perf_counter()
 print(f"Writing time: {toc - tic:0.4f} seconds")
 
 
+# # read dessin from file
+# tic = time.perf_counter()
+# with open(f"data/dessins_order({n}).json", 'r') as f:
+#     loadedDessins = jsonpickle.decode(f.read())
+# toc = time.perf_counter()
+# print(f"Loading time: {toc - tic:0.4f} seconds")
 
-# read dessin from file
-tic = time.perf_counter()
-with open(f"data/dessins_order({n}).json", 'r') as f:
-    loadedDessins = jsonpickle.decode(f.read())
-toc = time.perf_counter()
-print(f"Loading time: {toc - tic:0.4f} seconds")
-
-print([des.EulerChi for des in loadedDessins])
+# print(len(loadedDessins))
+# print([des.EulerChi for des in loadedDessins])
 

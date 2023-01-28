@@ -3,7 +3,7 @@
 import json
 from itertools import product
 from readableNestedList import readableNestedList
-from itertools import chain, combinations, permutations
+from itertools import chain, combinations, permutations, combinations_with_replacement
 from sympy.combinatorics.named_groups import SymmetricGroup
 
 
@@ -20,10 +20,10 @@ def isMorphism(alpha, F, G):
     for e in range(1, len(alpha) + 1):
     #alpha fb = gb alpha
         if alpha[permute(F.b, e)-1] != permute(G.b, alpha[e-1]):
-            return(False)
+            return False
         elif alpha[permute(F.w, e)-1] != permute(G.w, alpha[e-1]):
-            return(False)
-    return(True)
+            return False
+    return True
 
 def findMorphisms(F, G):
     nEdgesF = max_value(F.b)
@@ -52,16 +52,19 @@ def generate_dessins(n):
     SnCycles = [[tuple(e + 1 for e in cycle) for cycle in p.full_cyclic_form] for p in Sn]
 
     # list of pairs of permutations (in cyclic form) in Sn
-    SnCyclesSquared = list(product(SnCycles, repeat = 2))
+    SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))
 
     # Find all valid dessins
     dessins = []
     for pair in SnCyclesSquared:
         des = Dessin(pair[0], pair[1])
-        # if des.isConnected():
         if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins):
             dessins.append(des)
-    return dessins
+
+            # Check opposite colouring of des
+            des2 = Dessin(pair[1], pair[0])
+            if not areIsomorphic(des, des2):
+                dessins.append(des2)
 
 
 
