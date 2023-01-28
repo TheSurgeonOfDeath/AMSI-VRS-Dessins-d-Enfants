@@ -5,6 +5,7 @@ from itertools import product
 from readableNestedList import readableNestedList
 from itertools import chain, combinations, permutations, combinations_with_replacement
 from sympy.combinatorics.named_groups import SymmetricGroup
+from sympy.combinatorics import Permutation, PermutationGroup
 
 
 def max_value(inputlist):
@@ -81,7 +82,7 @@ class Dessin:
         # self.initFaces = self.faces2init()
         # self.nFaces = len(self.Faces)
         self.nEdges = max_value(self.b)
-        self.Edges = list(range(1, self.nEdges + 1))
+        self.Edges = range(1, self.nEdges + 1)
         # self.Vertices = self.b + self.w
         # self.nVertices = len(self.b) + len(self.w)
         # self.EulerChi = self.nVertices - self.nEdges + self.nFaces
@@ -140,6 +141,14 @@ class Dessin:
         bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
         wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
         return all(x not in bSubsets for x in wSubsets)
+
+    def isConnected2(self):
+        # Checks if the underlying group is transitive
+        perm_zero_index = lambda perm : [tuple(e - 1 for e in cycle) for cycle in perm]
+        pfb = Permutation(perm_zero_index(self.b))
+        pfw = Permutation(perm_zero_index(self.w))
+        Fgrp = PermutationGroup(pfb, pfw)
+        return Fgrp.is_transitive()
 
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__, 
