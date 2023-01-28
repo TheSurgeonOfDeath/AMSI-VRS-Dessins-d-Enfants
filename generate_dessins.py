@@ -42,20 +42,20 @@ tic = time.perf_counter()
 # list of pairs of permutations (in cyclic form) in Sn
 SnCyclesSquared = list(product(SnCycles, repeat = 2))
 
-# Find all valid dessins
-dessins2 = []
-for pair in SnCyclesSquared:
-    des = Dessin(pair[0], pair[1])
-    # if des.isConnected():
-    if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins2):
-        dessins2.append(des)
-toc = time.perf_counter()
-print(f"Combinations generating time: {toc - tic:0.4f} seconds")
+# # Find all valid dessins
+# dessins2 = []
+# for pair in SnCyclesSquared:
+#     des = Dessin(pair[0], pair[1])
+#     # if des.isConnected():
+#     if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins2):
+#         dessins2.append(des)
+# toc = time.perf_counter()
+# print(f"Combinations generating time: {toc - tic:0.4f} seconds")
 
-print(len(dessins))
-print(len(dessins2))
-print(readableNestedList([des.mono for des in dessins]))
-print(readableNestedList([des.mono for des in dessins2]))
+# print(len(dessins))
+# print(len(dessins2))
+# print(readableNestedList([des.mono for des in dessins]))
+# print(readableNestedList([des.mono for des in dessins2]))
 
 # choose representative from each isomorphism class
 # def remove_isomorphic(dessins: list[Dessin]) -> list[Dessin]:
@@ -65,14 +65,14 @@ print(readableNestedList([des.mono for des in dessins2]))
 #             classRep.append(des)
 #     return classRep
 
-# print(len(SnCyclesSquared))
-# print(len(dessins))
-# for des in dessins: 
-#     des.calcEulerChi()
-# chis = [des.EulerChi for des in dessins]
-# minGenus = 2
-# minChi = 2 - 2 * minGenus
-# non_triv_chi = [chi for chi in chis if chi < minChi]
-# print(non_triv_chi)
-# print(dessins[7].mono)
-# dessins[7].printEulerCharacteristic()
+print(len(SnCyclesSquared))
+print(len(dessins))
+for des in dessins: 
+    des.calcEulerChi()
+chis = [des.EulerChi for des in dessins]
+minGenus = 2
+minChi = 2 - 2 * minGenus
+non_triv_chi = [chi for chi in chis if chi < minChi]
+print(non_triv_chi)
+print(dessins[7].mono)
+dessins[7].printEulerCharacteristic()
