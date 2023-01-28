@@ -1,6 +1,6 @@
 # Find morphisms between two given dessins
 
-from Dessin_Morphisms import findMorphisms
+from Dessin import Dessin, findMorphisms
 from readableNestedList import readableNestedList
 
 # test 1
@@ -15,13 +15,25 @@ from readableNestedList import readableNestedList
 # gb = [(1,2,3,4)]
 # gw = [(4,3,2,1)]
 
-# fat square and square
-fb = [(2,3,1,4), (6,7,5,8)]
-fw = [(1,7,2,8), (4,5,3,6)]
-gb = [(1,2), (3,4)]
-gw = [(1,4), (2,3)]
+# # fat square and square
+# fb = [(2,3,1,4), (6,7,5,8)]
+# fw = [(1,7,2,8), (4,5,3,6)]
+# F = Dessin(fb, fw)
 
-morphisms = findMorphisms(fb, fw, gb, gw)
+# gb = [(1,2), (3,4)]
+# gw = [(1,4), (2,3)]
+# G = Dessin(gb, gw)
+
+# two order 5 dessins with chi = -2
+fb = [(1,2,3,4,5)]
+fw = [(1,2,3,4,5)]
+F = Dessin(fb, fw)
+
+gb = [(1,3,2,4,5)]
+gw = [(1,2,4,3,5)]
+G = Dessin(gb, gw)
+
+morphisms = findMorphisms(F, G)
 # note: any cyclic permutation of a morphism is also a morphism
 
 # Print results
