@@ -1,5 +1,6 @@
-from Dessin import Dessin, generate_dessins
-import json, jsonpickle
+from Dessin import generate_dessins
+import jsonpickle
+import time
 
 #### testing writing and reading json files of data
 # print(json.dumps({'4': 5, '6': 7}, sort_keys=True, indent=2))
@@ -13,21 +14,31 @@ import json, jsonpickle
 #     score2 = json.load(f)
 # print(score2)
 
-n = 1
+tic = time.perf_counter()
+n = 5
 dessins = generate_dessins(n)
 # print(len(dessins))
 for des in dessins: 
     des.calcEulerChi()
+toc = time.perf_counter()
+print(f"Generating time: {toc - tic:0.4f} seconds")
 
 # write dessin to file
+tic = time.perf_counter()
 encoded_dessins = jsonpickle.encode(dessins, indent = 4)
 with open(f"data/dessins_order({n}).json", 'w') as f:
     f.write(encoded_dessins)
+toc = time.perf_counter()
+print(f"Writing time: {toc - tic:0.4f} seconds")
+
+
 
 # read dessin from file
+tic = time.perf_counter()
 with open(f"data/dessins_order({n}).json", 'r') as f:
     loadedDessins = jsonpickle.decode(f.read())
+toc = time.perf_counter()
+print(f"Loading time: {toc - tic:0.4f} seconds")
 
-for des in loadedDessins:
-    des.printEulerCharacteristic()
-    print(des.monoStr)
+print([des.EulerChi for des in loadedDessins])
+

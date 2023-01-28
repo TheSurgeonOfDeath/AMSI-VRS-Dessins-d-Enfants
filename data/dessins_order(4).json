@@ -41,25 +41,13 @@
                 "py/id": 3
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -170,25 +158,13 @@
                 "py/id": 2
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -299,25 +275,13 @@
                 "py/id": 3
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -432,28 +396,16 @@
                 "py/id": 3
             },
             {
-                "py/id": 29
+                "py/id": 26
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -568,28 +520,16 @@
                 "py/id": 3
             },
             {
-                "py/id": 38
+                "py/id": 34
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -712,28 +652,16 @@
                 "py/id": 3
             },
             {
-                "py/id": 48
+                "py/id": 43
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -840,28 +768,16 @@
                 "py/id": 3
             },
             {
-                "py/id": 57
+                "py/id": 51
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -976,28 +892,16 @@
                 "py/id": 3
             },
             {
-                "py/id": 67
+                "py/id": 60
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -1120,28 +1024,16 @@
                 "py/id": 3
             },
             {
-                "py/id": 78
+                "py/id": 70
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -1272,28 +1164,16 @@
                 "py/id": 3
             },
             {
-                "py/id": 90
+                "py/id": 81
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -1424,28 +1304,16 @@
                 "py/id": 3
             },
             {
-                "py/id": 101
+                "py/id": 91
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -1547,38 +1415,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 29
+            "py/id": 26
         },
         "w": {
             "py/id": 3
         },
         "mono": [
             {
-                "py/id": 29
+                "py/id": 26
             },
             {
                 "py/id": 3
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -1668,38 +1524,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 29
+            "py/id": 26
         },
         "w": {
-            "py/id": 38
+            "py/id": 34
         },
         "mono": [
             {
-                "py/id": 29
+                "py/id": 26
             },
             {
-                "py/id": 38
+                "py/id": 34
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -1797,38 +1641,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 29
+            "py/id": 26
         },
         "w": {
-            "py/id": 48
+            "py/id": 43
         },
         "mono": [
             {
-                "py/id": 29
+                "py/id": 26
             },
             {
-                "py/id": 48
+                "py/id": 43
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -1930,38 +1762,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 29
+            "py/id": 26
         },
         "w": {
-            "py/id": 57
+            "py/id": 51
         },
         "mono": [
             {
-                "py/id": 29
+                "py/id": 26
             },
             {
-                "py/id": 57
+                "py/id": 51
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -2067,38 +1887,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 29
+            "py/id": 26
         },
         "w": {
-            "py/id": 90
+            "py/id": 81
         },
         "mono": [
             {
-                "py/id": 29
+                "py/id": 26
             },
             {
-                "py/id": 90
+                "py/id": 81
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -2200,38 +2008,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 38
+            "py/id": 34
         },
         "w": {
             "py/id": 3
         },
         "mono": [
             {
-                "py/id": 38
+                "py/id": 34
             },
             {
                 "py/id": 3
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -2333,38 +2129,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 38
+            "py/id": 34
         },
         "w": {
-            "py/id": 29
+            "py/id": 26
         },
         "mono": [
             {
-                "py/id": 38
+                "py/id": 34
             },
             {
-                "py/id": 29
+                "py/id": 26
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -2462,38 +2246,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 38
+            "py/id": 34
         },
         "w": {
-            "py/id": 48
+            "py/id": 43
         },
         "mono": [
             {
-                "py/id": 38
+                "py/id": 34
             },
             {
-                "py/id": 48
+                "py/id": 43
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -2591,38 +2363,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 38
+            "py/id": 34
         },
         "w": {
-            "py/id": 57
+            "py/id": 51
         },
         "mono": [
             {
-                "py/id": 38
+                "py/id": 34
             },
             {
-                "py/id": 57
+                "py/id": 51
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -2724,38 +2484,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 48
+            "py/id": 43
         },
         "w": {
             "py/id": 3
         },
         "mono": [
             {
-                "py/id": 48
+                "py/id": 43
             },
             {
                 "py/id": 3
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -2845,38 +2593,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 48
+            "py/id": 43
         },
         "w": {
-            "py/id": 29
+            "py/id": 26
         },
         "mono": [
             {
-                "py/id": 48
+                "py/id": 43
             },
             {
-                "py/id": 29
+                "py/id": 26
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -2978,38 +2714,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 48
+            "py/id": 43
         },
         "w": {
-            "py/id": 38
+            "py/id": 34
         },
         "mono": [
             {
-                "py/id": 48
+                "py/id": 43
             },
             {
-                "py/id": 38
+                "py/id": 34
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -3107,38 +2831,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 48
+            "py/id": 43
         },
         "w": {
-            "py/id": 57
+            "py/id": 51
         },
         "mono": [
             {
-                "py/id": 48
+                "py/id": 43
             },
             {
-                "py/id": 57
+                "py/id": 51
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -3244,38 +2956,26 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 48
+            "py/id": 43
         },
         "w": {
-            "py/id": 67
+            "py/id": 60
         },
         "mono": [
             {
-                "py/id": 48
+                "py/id": 43
             },
             {
-                "py/id": 67
+                "py/id": 60
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
@@ -3377,7 +3077,7 @@
     {
         "py/object": "Dessin.Dessin",
         "b": {
-            "py/id": 48
+            "py/id": 43
         },
         "w": [
             {
@@ -3395,31 +3095,19 @@
         ],
         "mono": [
             {
-                "py/id": 48
+                "py/id": 43
             },
             {
-                "py/id": 233
+                "py/id": 208
             }
         ],
-        "monoStr": [
-            "b",
-            "w"
-        ],
         "nEdges": 4,
-        "Edges": {
-            "py/reduce": [
-                {
-                    "py/type": "builtins.range"
-                },
-                {
-                    "py/tuple": [
-                        1,
-                        5,
-                        1
-                    ]
-                }
-            ]
-        },
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
         "Faces": [
             [
                 {
