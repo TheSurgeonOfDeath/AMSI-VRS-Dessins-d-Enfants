@@ -66,19 +66,19 @@ def generate_dessins(n):
 
 
 class Dessin:
+    monoStr = ['b', 'w']
     def __init__(self, b, w):
         # permutations
         self.b = b
         self.w = w
         self.mono = [b, w]
-        self.monoStr = ['b', 'w']
         
         # Euler characteristic
         # self.Faces = self.findFaces()
         # self.initFaces = self.faces2init()
         # self.nFaces = len(self.Faces)
         self.nEdges = max_value(self.b)
-        self.Edges = range(1, self.nEdges + 1)
+        self.Edges = list(range(1, self.nEdges + 1))
         # self.Vertices = self.b + self.w
         # self.nVertices = len(self.b) + len(self.w)
         # self.EulerChi = self.nVertices - self.nEdges + self.nFaces

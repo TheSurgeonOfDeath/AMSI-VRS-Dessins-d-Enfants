@@ -13,16 +13,21 @@ import json, jsonpickle
 #     score2 = json.load(f)
 # print(score2)
 
-n = 6
+n = 1
 dessins = generate_dessins(n)
+# print(len(dessins))
 for des in dessins: 
     des.calcEulerChi()
 
-# encoded_dessins = [jsonpickle.encode(des) for des in dessins]
+# encoded_dessins = [des.__dict__ for des in dessins]
 encoded_dessins = jsonpickle.encode(dessins, indent = 4)
 with open(f"data/dessins_order({n}).json", 'w') as f:
     # json.dump(encoded_dessins, f, indent=4)
     f.write(encoded_dessins)
 
+# with open(f"data/dessins_order({n+3}).json", 'r') as f:
+#     loadedDessins = jsonpickle.decode(f.read())
 
-# print(len(dessins))
+# for des in loadedDessins:
+#     des.printEulerCharacteristic()
+#     print(des.monoStr)
