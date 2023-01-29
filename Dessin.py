@@ -6,7 +6,7 @@ from readableNestedList import readableNestedList
 from itertools import chain, combinations, permutations, combinations_with_replacement
 from sympy.combinatorics.named_groups import SymmetricGroup
 from sympy.combinatorics import Permutation, PermutationGroup
-
+import random
 
 def max_value(inputlist):
     return max(max(sublist) for sublist in inputlist)
@@ -67,6 +67,25 @@ def generate_dessins(n):
             if not areIsomorphic(des, des2):
                 dessins.append(des2)
 
+
+# A function to generate a random permutation of arr[]
+def randomise(arr):
+    # Start from the last element and swap one by one. We don't
+    # need to run for the first element that's why i > 0
+    for i in range(len(arr)-1,0,-1):
+        # Pick a random index from 0 to i
+        j = random.randint(0,i)
+ 
+        # Swap arr[i] with the element at random index
+        arr[i],arr[j] = arr[j],arr[i]
+    return arr
+
+
+def randPerm(n):
+    return [tuple(e + 1 for e in cycle) for cycle in Permutation(randomise(list(range(n)))).full_cyclic_form]
+
+def randDessin(n):
+    return Dessin(randPerm(n), randPerm(n))
 
 
 class Dessin:
