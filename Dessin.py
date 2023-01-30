@@ -67,7 +67,8 @@ def generate_dessins(n):
 
     # Find all valid dessins
     dessins = []
-    for pair in SnCyclesSquared:
+    for i, pair in enumerate(SnCyclesSquared):
+        print([len(dessins), i, len(SnCyclesSquared)])
         des = Dessin(pair[0], pair[1])
         if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins):
             dessins.append(des)
