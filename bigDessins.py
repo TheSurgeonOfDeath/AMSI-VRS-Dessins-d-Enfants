@@ -15,7 +15,7 @@ import time
 # print(score2)
 
 # order
-n = 6
+n = 7
 
 
 # Generate dessins

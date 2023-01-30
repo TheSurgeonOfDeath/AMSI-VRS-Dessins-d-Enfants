@@ -33,6 +33,16 @@ def findMorphisms(F, G):
     surjMaps = [Map for Map in Maps if set(range(1, nEdgesG + 1)) <= set(Map)]
     return [surjMap for surjMap in surjMaps if isMorphism(surjMap, F, G)]
 
+def areMorphic(F, G):
+    nEdgesF = max_value(F.b)
+    nEdgesG = max_value(G.b)
+    Maps = list(product(range(1, nEdgesG + 1), repeat = nEdgesF))
+    surjMaps = [Map for Map in Maps if set(range(1, nEdgesG + 1)) <= set(Map)]
+    return next(
+        (True for surjMap in surjMaps if isMorphism(surjMap, F, G)), False
+    )
+
+
 def powerset(iterable):
     # source: https://docs.python.org/3/library/itertools.html#itertools-recipes
     "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
@@ -66,6 +76,7 @@ def generate_dessins(n):
             des2 = Dessin(pair[1], pair[0])
             if not areIsomorphic(des, des2):
                 dessins.append(des2)
+    return dessins
 
 
 # A function to generate a random permutation of arr[]
@@ -144,6 +155,8 @@ class Dessin:
         self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
     def printEulerCharacteristic(self):
+        if not hasattr(self, 'EulerChi'): 
+            self.calcEulerChi
         print(f"Faces: {readableNestedList(self.Faces)}")
         print(f"Initial edges: {self.initFaces}")
         print(f"No. faces: {self.nFaces}")

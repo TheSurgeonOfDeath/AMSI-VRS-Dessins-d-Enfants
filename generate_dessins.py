@@ -36,11 +36,11 @@ for pair in SnCyclesSquared:
             # append opposite colouring of des
             dessins.append(des2)
 toc = time.perf_counter()
-print(f"Product generating time: {toc - tic:0.4f} seconds")
+print(f"Combinations generating time: {toc - tic:0.4f} seconds")
 
-tic = time.perf_counter()
-# list of pairs of permutations (in cyclic form) in Sn
-SnCyclesSquared = list(product(SnCycles, repeat = 2))
+# tic = time.perf_counter()
+# # list of pairs of permutations (in cyclic form) in Sn
+# SnCyclesSquared = list(product(SnCycles, repeat = 2))
 
 # # Find all valid dessins
 # dessins2 = []
@@ -50,7 +50,7 @@ SnCyclesSquared = list(product(SnCycles, repeat = 2))
 #     if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins2):
 #         dessins2.append(des)
 # toc = time.perf_counter()
-# print(f"Combinations generating time: {toc - tic:0.4f} seconds")
+# print(f"Product generating time: {toc - tic:0.4f} seconds")
 
 # print(len(dessins))
 # print(len(dessins2))
