@@ -1,0 +1,582 @@
+[
+    {
+        "py/object": "Dessin.Dessin",
+        "b": [
+            {
+                "py/tuple": [
+                    1
+                ]
+            }
+        ],
+        "w": {
+            "py/id": 2
+        },
+        "mono": [
+            {
+                "py/id": 2
+            },
+            {
+                "py/id": 2
+            }
+        ],
+        "nEdges": 1,
+        "Edges": [
+            1
+        ],
+        "Faces": [
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        1,
+                        "w"
+                    ]
+                }
+            ]
+        ],
+        "initFaces": [
+            {
+                "py/tuple": [
+                    1,
+                    "b"
+                ]
+            }
+        ],
+        "nFaces": 1,
+        "Vertices": [
+            {
+                "py/tuple": [
+                    1
+                ]
+            },
+            {
+                "py/tuple": [
+                    1
+                ]
+            }
+        ],
+        "nVertices": 2,
+        "EulerChi": 2
+    },
+    {
+        "py/object": "Dessin.Dessin",
+        "b": [
+            {
+                "py/tuple": [
+                    1
+                ]
+            },
+            {
+                "py/tuple": [
+                    2
+                ]
+            }
+        ],
+        "w": [
+            {
+                "py/tuple": [
+                    1,
+                    2
+                ]
+            }
+        ],
+        "mono": [
+            {
+                "py/id": 10
+            },
+            {
+                "py/id": 11
+            }
+        ],
+        "nEdges": 2,
+        "Edges": [
+            1,
+            2
+        ],
+        "Faces": [
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        1,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                }
+            ]
+        ],
+        "initFaces": [
+            {
+                "py/tuple": [
+                    1,
+                    "b"
+                ]
+            }
+        ],
+        "nFaces": 1,
+        "Vertices": [
+            {
+                "py/tuple": [
+                    1
+                ]
+            },
+            {
+                "py/tuple": [
+                    2
+                ]
+            },
+            {
+                "py/tuple": [
+                    1,
+                    2
+                ]
+            }
+        ],
+        "nVertices": 3,
+        "EulerChi": 2
+    },
+    {
+        "py/object": "Dessin.Dessin",
+        "b": {
+            "py/id": 11
+        },
+        "w": {
+            "py/id": 10
+        },
+        "mono": [
+            {
+                "py/id": 11
+            },
+            {
+                "py/id": 10
+            }
+        ],
+        "nEdges": 2,
+        "Edges": [
+            1,
+            2
+        ],
+        "Faces": [
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        1,
+                        "w"
+                    ]
+                }
+            ]
+        ],
+        "initFaces": [
+            {
+                "py/tuple": [
+                    1,
+                    "b"
+                ]
+            }
+        ],
+        "nFaces": 1,
+        "Vertices": [
+            {
+                "py/tuple": [
+                    1,
+                    2
+                ]
+            },
+            {
+                "py/tuple": [
+                    1
+                ]
+            },
+            {
+                "py/tuple": [
+                    2
+                ]
+            }
+        ],
+        "nVertices": 3,
+        "EulerChi": 2
+    },
+    {
+        "py/object": "Dessin.Dessin",
+        "b": {
+            "py/id": 11
+        },
+        "w": {
+            "py/id": 11
+        },
+        "mono": [
+            {
+                "py/id": 11
+            },
+            {
+                "py/id": 11
+            }
+        ],
+        "nEdges": 2,
+        "Edges": [
+            1,
+            2
+        ],
+        "Faces": [
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                }
+            ],
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "b"
+                    ]
+                }
+            ]
+        ],
+        "initFaces": [
+            {
+                "py/tuple": [
+                    1,
+                    "b"
+                ]
+            },
+            {
+                "py/tuple": [
+                    1,
+                    "w"
+                ]
+            }
+        ],
+        "nFaces": 2,
+        "Vertices": [
+            {
+                "py/tuple": [
+                    1,
+                    2
+                ]
+            },
+            {
+                "py/tuple": [
+                    1,
+                    2
+                ]
+            }
+        ],
+        "nVertices": 2,
+        "EulerChi": 2
+    },
+    {
+        "py/object": "Dessin.Dessin",
+        "b": [
+            {
+                "py/tuple": [
+                    1,
+                    2,
+                    3
+                ]
+            }
+        ],
+        "w": [
+            {
+                "py/tuple": [
+                    1,
+                    3,
+                    2
+                ]
+            }
+        ],
+        "mono": [
+            {
+                "py/id": 34
+            },
+            {
+                "py/id": 35
+            }
+        ],
+        "nEdges": 3,
+        "Edges": [
+            1,
+            2,
+            3
+        ],
+        "Faces": [
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                }
+            ],
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "b"
+                    ]
+                }
+            ],
+            [
+                {
+                    "py/tuple": [
+                        2,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "w"
+                    ]
+                }
+            ]
+        ],
+        "initFaces": [
+            {
+                "py/tuple": [
+                    1,
+                    "b"
+                ]
+            },
+            {
+                "py/tuple": [
+                    1,
+                    "w"
+                ]
+            },
+            {
+                "py/tuple": [
+                    2,
+                    "b"
+                ]
+            }
+        ],
+        "nFaces": 3,
+        "Vertices": [
+            {
+                "py/tuple": [
+                    1,
+                    2,
+                    3
+                ]
+            },
+            {
+                "py/tuple": [
+                    1,
+                    3,
+                    2
+                ]
+            }
+        ],
+        "nVertices": 2,
+        "EulerChi": 2
+    },
+    {
+        "py/object": "Dessin.Dessin",
+        "b": [
+            {
+                "py/tuple": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "py/tuple": [
+                    2,
+                    4
+                ]
+            }
+        ],
+        "w": [
+            {
+                "py/tuple": [
+                    1,
+                    4
+                ]
+            },
+            {
+                "py/tuple": [
+                    2,
+                    3
+                ]
+            }
+        ],
+        "mono": [
+            {
+                "py/id": 45
+            },
+            {
+                "py/id": 46
+            }
+        ],
+        "nEdges": 4,
+        "Edges": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "Faces": [
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        4,
+                        "w"
+                    ]
+                }
+            ],
+            [
+                {
+                    "py/tuple": [
+                        1,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        4,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "b"
+                    ]
+                }
+            ]
+        ],
+        "initFaces": [
+            {
+                "py/tuple": [
+                    1,
+                    "b"
+                ]
+            },
+            {
+                "py/tuple": [
+                    1,
+                    "w"
+                ]
+            }
+        ],
+        "nFaces": 2,
+        "Vertices": [
+            {
+                "py/tuple": [
+                    1,
+                    3
+                ]
+            },
+            {
+                "py/tuple": [
+                    2,
+                    4
+                ]
+            },
+            {
+                "py/tuple": [
+                    1,
+                    4
+                ]
+            },
+            {
+                "py/tuple": [
+                    2,
+                    3
+                ]
+            }
+        ],
+        "nVertices": 4,
+        "EulerChi": 2
+    }
+]
