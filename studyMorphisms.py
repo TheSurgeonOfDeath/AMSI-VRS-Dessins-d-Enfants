@@ -20,10 +20,10 @@ for n in [1,2,3,4,6]:
 # Find morphic dessins to F
 morphicDes = []
 for i, orderClass in enumerate(dessins):
-    morphicDes.extend(
-        (des, print([len(morphicDes), j, len(orderClass), i, len(dessins)]))
-        for j, des in enumerate(orderClass) if areMorphic(F, des)
-     )
+    for j, des in enumerate(orderClass):
+        print([len(morphicDes), j, len(orderClass), i, len(dessins)])
+        if areMorphic(F, des):
+            morphicDes.append(des)
 
 with open(f"data/morphic_dessins_to_n={F.nEdges}_chi={F.EulerChi}.json", 'w') as f:
     f.write(jsonpickle.encode(morphicDes, indent = 4))
