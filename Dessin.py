@@ -26,20 +26,16 @@ def isMorphism(alpha, F, G):
             return False
     return True
 
+def findSurjMaps(F, G):
+    Maps = list(product(G.Edges, repeat = F.nEdges))
+    return [Map for Map in Maps if set(G.Edges) <= set(Map)]
+
 def findMorphisms(F, G):
-    nEdgesF = max_value(F.b)
-    nEdgesG = max_value(G.b)
-    Maps = list(product(range(1, nEdgesG + 1), repeat = nEdgesF))
-    surjMaps = [Map for Map in Maps if set(range(1, nEdgesG + 1)) <= set(Map)]
-    return [surjMap for surjMap in surjMaps if isMorphism(surjMap, F, G)]
+    return [surjMap for surjMap in findSurjMaps(F, G) if isMorphism(surjMap, F, G)]
 
 def areMorphic(F, G):
-    nEdgesF = max_value(F.b)
-    nEdgesG = max_value(G.b)
-    Maps = list(product(range(1, nEdgesG + 1), repeat = nEdgesF))
-    surjMaps = [Map for Map in Maps if set(range(1, nEdgesG + 1)) <= set(Map)]
     return next(
-        (True for surjMap in surjMaps if isMorphism(surjMap, F, G)), False
+        (True for surjMap in findSurjMaps(F, G) if isMorphism(surjMap, F, G)), False
     )
 
 
