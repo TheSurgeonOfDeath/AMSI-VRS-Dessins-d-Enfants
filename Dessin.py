@@ -30,6 +30,12 @@ def findSurjMaps(F, G):
     Maps = list(product(G.Edges, repeat = F.nEdges))
     return [Map for Map in Maps if set(G.Edges) <= set(Map)]
 
+# def findSurjMaps2(F, G):
+#     surj = list(G.Edges)
+#     rests = product(G.Edges, repeat = F.nEdges - G.nEdges)
+#     posMaps = [surj.extend(rest) for rest in rests]
+#     return list(permutations(posMaps))
+
 def findMorphisms(F, G):
     return [surjMap for surjMap in findSurjMaps(F, G) if isMorphism(surjMap, F, G)]
 
@@ -37,7 +43,6 @@ def areMorphic(F, G):
     return next(
         (True for surjMap in findSurjMaps(F, G) if isMorphism(surjMap, F, G)), False
     )
-
 
 def powerset(iterable):
     # source: https://docs.python.org/3/library/itertools.html#itertools-recipes
