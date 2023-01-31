@@ -54,5 +54,5 @@ with open("data/morphic_dessins_to_3-fat_square.json", 'w') as f:
 
 
 print(len(morphicDes))
-for des in morphicDes:
-    des.printEulerCharacteristic()
+chis = [des.EulerChi for des in morphicDes]
+print(chis)
