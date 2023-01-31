@@ -29,33 +29,33 @@ def isMorphism(alpha, F, G):
             return False
     return True
 
-def findSurjMaps(F, G):
-    if F.nEdges % G.nEdges != 0:
-        return []
-    Maps = list(product(G.Edges, repeat = F.nEdges))
-    return [Map for Map in Maps if set(G.Edges) <= set(Map)]
+# def findSurjMaps(F, G):
+#     if F.nEdges % G.nEdges != 0:
+#         return []
+#     Maps = list(product(G.Edges, repeat = F.nEdges))
+#     return [Map for Map in Maps if set(G.Edges) <= set(Map)]
 
-# def findSurjMaps2(F, G):
-#     surj = list(G.Edges)
-#     rests = product(G.Edges, repeat = F.nEdges - G.nEdges)
-#     posMaps = [surj.extend(rest) for rest in rests]
-#     return list(permutations(posMaps))
+# def findValidMaps2(F, G):
+#     if F.nEdges % G.nEdges != 0:
+#         return []
+#     return list(set(permutations(list(G.Edges) * int(F.nEdges / G.nEdges))))
 
 def findValidMaps(F, G):
     if F.nEdges % G.nEdges != 0:
         return []
-    return list(set(permutations(list(G.Edges) * int(F.nEdges / G.nEdges))))
-
-def findValidMaps2(F, G):
-    if F.nEdges % G.nEdges != 0:
-        return []
-    return list(unique_permutations(tuple(G.Edges) * int(F.nEdges / G.nEdges)))
+    return [
+        tuple(perm)
+        for perm in unique_permutations(
+            list(G.Edges) * int(F.nEdges / G.nEdges)
+        )
+    ]
 
 def findMorphisms(F, G):
     return [validMap for validMap in findValidMaps(F, G) if isMorphism(validMap, F, G)]
 
-def findMorphisms2(F, G):
-    return [surjMap for surjMap in findSurjMaps(F, G) if isMorphism(surjMap, F, G)]
+# def findMorphisms2(F, G):
+#     return [validMap for validMap in findValidMaps2(F, G) if isMorphism(validMap, F, G)]
+
 
 def areMorphic(F, G):
     return next(

@@ -2,15 +2,15 @@
 from Morphism import * 
 from Graph import Graph
 
-from Dessin import Dessin as Des
-from DessinOld import Dessin
+from LDessin import Dessin as Des
+from Dessin import Dessin
 
 import jsonpickle
 
 #D4 = Dessin([[2, 1], [4, 3]], [[1, 4], [2, 3]])
 #S5 = Dessin([[1,2,3,4]], [[4,3,2,1]])
 
-with open("/home/lachlan/Downloads/AMSI-VRS-Dessins-d-Enfants/data/dessins_order(5).json", 'r') as f:
+with open("data/dessins_order(5).json", 'r') as f:
     D = jsonpickle.decode(f.read())
 
 b = D[20].b 

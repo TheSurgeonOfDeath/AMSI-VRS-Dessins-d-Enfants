@@ -1,11 +1,11 @@
-from Dessin import Dessin, findSurjMaps, findValidMaps, findValidMaps2, randDessin, findMorphisms, findMorphisms2
+from Dessin import Dessin, findValidMaps, findValidMaps2, randDessin, findMorphisms, findMorphisms2
 import time
 import random
 from unique_permutations import unique_permutations
 
 # source
 random.seed(10)
-randDes = randDessin(16)
+randDes = randDessin(12)
 
 # fat square
 fb = [(2,3,1,4), (6,7,5,8)]
@@ -32,19 +32,26 @@ vb = [(1,), (2,)]
 vw = [(1,2)]
 V = Dessin(vb, vw)
 
-targets = [G, H, U, V]
+targets = [F, G, H, U, V]
+
+
+tic = time.perf_counter()
+# M2 = [findMorphisms2(F, des) for des in targets]
+M2 = findMorphisms2(randDes,G)
+toc = time.perf_counter()
+print(f"findMorphisms2 time: {toc - tic:0.4f} seconds")
+
+tic = time.perf_counter()
+# M1 = [findMorphisms(F, des) for des in targets]
+M1 = findMorphisms(randDes,G)
+toc = time.perf_counter()
+print(f"findMorphisms time: {toc - tic:0.4f} seconds")
 
 # tic = time.perf_counter()
-# # M1 = [findValidMaps(F, des) for des in targets]
-# M1 = findValidMaps(F,V)
+# M3 = [findMorphisms3(F, des) for des in targets]
+# # M3 = findMorphisms3(F,G)
 # toc = time.perf_counter()
-# print(f"findValidMaps time: {toc - tic:0.4f} seconds")
-
-# tic = time.perf_counter()
-# # M2 = [findValidMaps2(F, des) for des in targets]
-# M2 = findValidMaps2(F,V)
-# toc = time.perf_counter()
-# print(f"findValidMaps2 time: {toc - tic:0.4f} seconds")
+# print(f"findMorphisms3 time: {toc - tic:0.4f} seconds")
 
 # print(set(M1) == set(M2))
 # print(type(M1))
@@ -53,10 +60,10 @@ targets = [G, H, U, V]
 # print(len(M1))
 # print(len(M2))
 # print([set(M1[i]) == set(M2[i]) for i in range(len(M1))])
+# print(M1[3])
+# print(M2[3])
 # print(M1)
 # print(M2)
-L = list(unique_permutations((1,1,2,2)))
+# L = list(unique_permutations((1,1,2,2)))
 # L = [tuple(perm) for perm in unique_permutations((1,1,2,2))]
-print(L)
-print(list(range(4)))
-
+# print(L)
