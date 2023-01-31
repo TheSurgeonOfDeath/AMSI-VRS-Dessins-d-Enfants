@@ -88,7 +88,7 @@ def randomise(arr):
     for i in range(len(arr)-1,0,-1):
         # Pick a random index from 0 to i
         j = random.randint(0,i)
-
+ 
         # Swap arr[i] with the element at random index
         arr[i],arr[j] = arr[j],arr[i]
     return arr
@@ -100,12 +100,90 @@ def randPerm(n):
 def randDessin(n):
     return Dessin(randPerm(n), randPerm(n))
 
-def printEulerCharacteristic(self):
-    if not hasattr(self, 'EulerChi'):
-        self.calcEulerChi
-    print(f"Faces: {readableNestedList(self.Faces)}")
-    print(f"Initial edges: {self.initFaces}")
-    print(f"No. faces: {self.nFaces}")
-    print(f"No. edges: {self.nEdges}")
-    print(f"No. vertices: {self.nVertices}")
-    print(f"Euler Characteristic: {self.EulerChi}")
+
+class Dessin:
+    monoStr = ['b', 'w']
+    def __init__(self, b, w):
+        # permutations
+        self.b = b
+        self.w = w
+        self.mono = [b, w]
+        
+        # Euler characteristic
+        # self.Faces = self.findFaces()
+        # self.initFaces = self.faces2init()
+        # self.nFaces = len(self.Faces)
+        self.nEdges = max_value(self.b)
+        self.Edges = range(1, self.nEdges + 1)
+        # self.Vertices = self.b + self.w
+        # self.nVertices = len(self.b) + len(self.w)
+        # self.EulerChi = self.nVertices - self.nEdges + self.nFaces
+
+    def findFaces(self):
+        faces = []
+        nEdges = max_value(self.b)
+        for e in range(1, nEdges + 1):
+            for i in range(len(self.monoStr)):
+                face = []
+                f0 = (e, self.monoStr[i])
+                if any(f0 in face for face in faces):
+                    continue
+                face.append(f0)
+                eNew = permute(self.mono[i], e)
+                dNewIdx = i - 1
+                fNew = (eNew, self.monoStr[dNewIdx])
+                it = 0;
+                while fNew != f0:
+                    it += 1
+                    face.append(fNew)
+                    eNew = permute(self.mono[dNewIdx], eNew)
+                    dNewIdx = i - 1 - it % 2
+                    fNew = (eNew, self.monoStr[dNewIdx])
+                faces.append(face)
+        return(faces)
+        
+
+    def faces2init(self):
+        return [f[0] for f in self.Faces]
+
+    def calcEulerChi(self):
+        self.Faces = self.findFaces()
+        self.initFaces = self.faces2init()
+        self.nFaces = len(self.Faces)
+        # self.nEdges = max_value(self.b)
+        # self.Edges = range(1, self.nEdges + 1)
+        self.Vertices = self.b + self.w
+        self.nVertices = len(self.b) + len(self.w)
+        self.EulerChi = self.nVertices - self.nEdges + self.nFaces
+
+    def printEulerCharacteristic(self):
+        if not hasattr(self, 'EulerChi'): 
+            self.calcEulerChi
+        print(f"Faces: {readableNestedList(self.Faces)}")
+        print(f"Initial edges: {self.initFaces}")
+        print(f"No. faces: {self.nFaces}")
+        print(f"No. edges: {self.nEdges}")
+        print(f"No. vertices: {self.nVertices}")
+        print(f"Euler Characteristic: {self.EulerChi}")
+
+    def isConnected(self):
+        # For a proper subset B of cycles of b, let S be the edge set of B and
+        # for a proper subset W of cycles of w, let T be the edge set of W.
+        # If any S = T, the dessin is disconnected. If all S \neq T, it is connected.
+        bPowerSet = list(powerset(self.b))[1:-1]
+        wPowerSet = list(powerset(self.w))[1:-1]
+        bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
+        wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
+        return all(x not in bSubsets for x in wSubsets)
+
+    def isConnected2(self):
+        # Checks if the underlying group is transitive
+        perm_zero_index = lambda perm : [tuple(e - 1 for e in cycle) for cycle in perm]
+        pfb = Permutation(perm_zero_index(self.b))
+        pfw = Permutation(perm_zero_index(self.w))
+        Fgrp = PermutationGroup(pfb, pfw)
+        return Fgrp.is_transitive()
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True, indent=4)

@@ -1,18 +1,18 @@
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
-\node [style=Black] (2) at (1.0, 0.0) {};
-\node [style=White] (3) at (-1.0, 0.0) {};
-\node [style=White] (4) at (2.0, 0.0) {};
-\node [style=White] (5) at (0.0, 0.0) {};
-\node [style=Black] (0) at (-2.0, 0.0) {};
+\node [style=White] (3) at (1.0, 0.0) {};
+\node [style=Black] (2) at (-1.0, 0.0) {};
+\node [style=Black] (0) at (2.0, 0.0) {};
 \node [style=Black] (1) at (0.0, 0.0) {};
+\node [style=White] (4) at (-2.0, 0.0) {};
+\node [style=White] (5) at (0.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (2) to (3);)
-\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (2) to (5);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (2) to (4);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
+\draw [in=(180.0, 1), out=(340, 1), looseness=0.75] (2) to (3));
+\draw [in=(160.0, 1), out=(0, 1), looseness=0.75] (2) to (5));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (2) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -23,11 +23,11 @@
 \node [style=Black] (2) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(240.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(220.9, 1), out=(100.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(260.9, 1), out=(20.9, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(180.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(240.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(220.9, 1), out=(100.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(260.9, 1), out=(20.9, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -40,11 +40,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (1) to (4);)
-\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (2) to (5);)
-\draw [in=(299.1, 1), out=(80.9, 1), looseness=0.75] (2) to (4);)
-\draw [in=(279.1, 1), out=(0, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (1) to (4));
+\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (2) to (5));
+\draw [in=(299.1, 1), out=(80.9, 1), looseness=0.75] (2) to (4));
+\draw [in=(279.1, 1), out=(0, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -55,11 +55,11 @@
 \node [style=Black] (2) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(100.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(80.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(220.9, 1), out=(20.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(260.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(100.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(80.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(220.9, 1), out=(20.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(260.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -70,27 +70,27 @@
 \node [style=Black] (2) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(100.0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(20.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(220.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(260.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(100.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(20.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(220.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(260.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
-\node [style=Black] (2) at (1.0, 0.0) {};
-\node [style=White] (3) at (-0.5, 0.9) {};
-\node [style=White] (4) at (-0.5, -0.9) {};
-\node [style=Black] (0) at (-1.0, 0.0) {};
+\node [style=White] (3) at (1.0, 0.0) {};
+\node [style=White] (4) at (-0.5, 0.9) {};
+\node [style=Black] (2) at (-0.5, -0.9) {};
+\node [style=Black] (0) at (2.0, 0.0) {};
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(231.0, 1), looseness=0.75] (1) to (4);)
-\draw [in=(349.0, 1), out=(211.0, 1), looseness=0.75] (2) to (4);)
-\draw [in=(329.0, 1), out=(80.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(31.0, 1), out=(191.0, 1), looseness=0.75] (2) to (4);)
+\draw [in=(0, 1), out=(51.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(240.9, 1), out=(50.0, 1), looseness=0.75] (1) to (4));
+\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (2) to (4));
+\draw [in=(250.0, 1), out=(31.0, 1), looseness=0.75] (2) to (3));
+\draw [in=(290.0, 1), out=(70.0, 1), looseness=0.75] (2) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -102,11 +102,11 @@
 \node [style=White] (4) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(160.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(120.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(260.9, 1), out=(119.1, 1), looseness=0.75] (2) to (4);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(220.9, 1), out=(100.9, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(160.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(120.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(260.9, 1), out=(119.1, 1), looseness=0.75] (2) to (4));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(220.9, 1), out=(100.9, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -117,27 +117,27 @@
 \node [style=Black] (2) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(120.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(220.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(260.9, 1), out=(100.9, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(180.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(120.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(220.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(260.9, 1), out=(100.9, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
-\node [style=Black] (2) at (1.0, 0.0) {};
-\node [style=White] (3) at (-0.5, 0.9) {};
-\node [style=White] (4) at (-0.5, -0.9) {};
-\node [style=Black] (0) at (-1.0, 0.0) {};
+\node [style=White] (3) at (1.0, 0.0) {};
+\node [style=White] (4) at (-0.5, 0.9) {};
+\node [style=Black] (2) at (-0.5, -0.9) {};
+\node [style=Black] (0) at (2.0, 0.0) {};
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (4);)
-\draw [in=(349.0, 1), out=(279.1, 1), looseness=0.75] (2) to (4);)
-\draw [in=(329.0, 1), out=(100.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(309.0, 1), out=(140.9, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(240.9, 1), out=(70.0, 1), looseness=0.75] (1) to (4));
+\draw [in=(231.0, 1), out=(90.0, 1), looseness=0.75] (2) to (4));
+\draw [in=(211.0, 1), out=(31.0, 1), looseness=0.75] (2) to (3));
+\draw [in=(191.0, 1), out=(11.0, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -149,11 +149,11 @@
 \node [style=White] (4) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(100.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(80.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(280.9, 1), out=(119.1, 1), looseness=0.75] (2) to (4);)
-\draw [in=(260.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(100.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(80.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(280.9, 1), out=(119.1, 1), looseness=0.75] (2) to (4));
+\draw [in=(260.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -165,11 +165,11 @@
 \node [style=White] (4) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(279.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (2) to (4);)
-\draw [in=(279.1, 1), out=(99.1, 1), looseness=0.75] (2) to (4);)
-\draw [in=(259.1, 1), out=(319.1, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(279.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (2) to (4));
+\draw [in=(279.1, 1), out=(99.1, 1), looseness=0.75] (2) to (4));
+\draw [in=(259.1, 1), out=(319.1, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -181,11 +181,11 @@
 \node [style=White] (4) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(100.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(80.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(220.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3);)
-\draw [in=(260.9, 1), out=(119.1, 1), looseness=0.75] (2) to (4);)
+\draw [in=(0, 1), out=(100.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(80.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(220.9, 1), out=(40.9, 1), looseness=0.75] (2) to (3));
+\draw [in=(260.9, 1), out=(119.1, 1), looseness=0.75] (2) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -196,11 +196,11 @@
 \node [style=White] (3) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.9, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(60.9, 1), out=(240.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(240.9, 1), out=(119.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(20.9, 1), out=(260.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(100.9, 1), out=(220.9, 1), looseness=0.75] (0) to (3);)
+\draw [in=(180.9, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(60.9, 1), out=(240.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(240.9, 1), out=(119.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(20.9, 1), out=(260.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(100.9, 1), out=(220.9, 1), looseness=0.75] (0) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -211,11 +211,11 @@
 \node [style=White] (3) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(239.1, 1), out=(20, 1), looseness=0.75] (0) to (1);)
-\draw [in=(219.1, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(279.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3);)
+\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(239.1, 1), out=(20, 1), looseness=0.75] (0) to (1));
+\draw [in=(219.1, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(279.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -224,11 +224,11 @@
 \node [style=White] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(140.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(40, 1), out=(220.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (1);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(140.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(40, 1), out=(220.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -239,11 +239,11 @@
 \node [style=White] (3) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(119.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(179.1, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(259.1, 1), out=(99.1, 1), looseness=0.75] (0) to (2);)
+\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(119.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(179.1, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(259.1, 1), out=(99.1, 1), looseness=0.75] (0) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -253,11 +253,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(220.0, 1), out=(320, 1), looseness=0.75] (0) to (1);)
-\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(220.0, 1), out=(320, 1), looseness=0.75] (0) to (1));
+\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -266,11 +266,11 @@
 \node [style=White] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(340, 1), out=(220.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(40, 1), out=(140.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (1);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(220.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(40, 1), out=(140.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -281,11 +281,11 @@
 \node [style=White] (3) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(219.1, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(279.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(259.1, 1), out=(99.1, 1), looseness=0.75] (0) to (2);)
+\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(219.1, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(279.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(259.1, 1), out=(99.1, 1), looseness=0.75] (0) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -295,11 +295,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -310,11 +310,11 @@
 \node [style=White] (3) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(279.1, 1), out=(99.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(259.1, 1), out=(139.1, 1), looseness=0.75] (0) to (2);)
+\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(279.1, 1), out=(99.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(259.1, 1), out=(139.1, 1), looseness=0.75] (0) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -323,11 +323,11 @@
 \node [style=White] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(340, 1), out=(220.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(40, 1), out=(200.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(20, 1), out=(140.0, 1), looseness=0.75] (0) to (1);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(220.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(40, 1), out=(200.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(20, 1), out=(140.0, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -336,11 +336,11 @@
 \node [style=White] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(40, 1), out=(220.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(20, 1), out=(140.0, 1), looseness=0.75] (0) to (1);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(40, 1), out=(220.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(20, 1), out=(140.0, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -350,11 +350,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(140.0, 1), out=(320, 1), looseness=0.75] (0) to (1);)
-\draw [in=(220.0, 1), out=(20, 1), looseness=0.75] (0) to (1);)
-\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(140.0, 1), out=(320, 1), looseness=0.75] (0) to (1));
+\draw [in=(220.0, 1), out=(20, 1), looseness=0.75] (0) to (1));
+\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -364,11 +364,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(120, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(140.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(40, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
+\draw [in=(120, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(40, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -378,11 +378,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(120, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(40, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
+\draw [in=(120, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(40, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -394,11 +394,11 @@
 \node [style=White] (4) at (0.0, -1.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(210.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(190.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(10.0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (0) to (4);)
+\draw [in=(210.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(190.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(10.0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (0) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -408,11 +408,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(220.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(200.0, 1), out=(20, 1), looseness=0.75] (0) to (1);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(220.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(200.0, 1), out=(20, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -421,11 +421,11 @@
 \node [style=White] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(40, 1), out=(220.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(20, 1), out=(160.0, 1), looseness=0.75] (0) to (1);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(40, 1), out=(220.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(20, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -438,11 +438,11 @@
 \node [style=White] (5) at (0.3, -1.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(186.7, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(273.3, 1), out=(143.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(253.3, 1), out=(73.3, 1), looseness=0.75] (0) to (2);)
-\draw [in=(333.3, 1), out=(216.9, 1), looseness=0.75] (0) to (4);)
-\draw [in=(106.7, 1), out=(286.7, 1), looseness=0.75] (0) to (5);)
+\draw [in=(186.7, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(273.3, 1), out=(143.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(253.3, 1), out=(73.3, 1), looseness=0.75] (0) to (2));
+\draw [in=(333.3, 1), out=(216.9, 1), looseness=0.75] (0) to (4));
+\draw [in=(106.7, 1), out=(286.7, 1), looseness=0.75] (0) to (5));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -451,11 +451,11 @@
 \node [style=White] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(40, 1), out=(220.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (1);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(40, 1), out=(220.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -466,11 +466,11 @@
 \node [style=White] (3) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(299.1, 1), out=(99.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(279.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(259.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(339.1, 1), out=(260.9, 1), looseness=0.75] (0) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(299.1, 1), out=(99.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(279.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(259.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(339.1, 1), out=(260.9, 1), looseness=0.75] (0) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -481,11 +481,11 @@
 \node [style=White] (3) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(219.1, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2);)
-\draw [in=(179.1, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(159.1, 1), out=(20, 1), looseness=0.75] (0) to (1);)
-\draw [in=(239.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3);)
+\draw [in=(219.1, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (2));
+\draw [in=(179.1, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(159.1, 1), out=(20, 1), looseness=0.75] (0) to (1));
+\draw [in=(239.1, 1), out=(240.9, 1), looseness=0.75] (0) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -494,11 +494,11 @@
 \node [style=White] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(40, 1), out=(160.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(20, 1), out=(220.0, 1), looseness=0.75] (0) to (1);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(40, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(20, 1), out=(220.0, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -510,11 +510,11 @@
 \node [style=White] (4) at (0.0, -1.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(190.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(150.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(10.0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (0) to (4);)
+\draw [in=(190.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(150.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(10.0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (0) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -524,11 +524,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(220.0, 1), out=(320, 1), looseness=0.75] (0) to (1);)
-\draw [in=(200.0, 1), out=(20, 1), looseness=0.75] (0) to (1);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(220.0, 1), out=(320, 1), looseness=0.75] (0) to (1));
+\draw [in=(200.0, 1), out=(20, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -538,11 +538,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(220.0, 1), out=(20, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(220.0, 1), out=(20, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -552,11 +552,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(120, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(140.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(40, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
+\draw [in=(120, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(40, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -566,11 +566,11 @@
 \node [style=White] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (0) to (1);)
-\draw [in=(140.0, 1), out=(20, 1), looseness=0.75] (0) to (1);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (0) to (1);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (0) to (1));
+\draw [in=(140.0, 1), out=(20, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -579,11 +579,11 @@
 \node [style=White] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(320, 1), out=(220.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(40, 1), out=(140.0, 1), looseness=0.75] (0) to (1);)
-\draw [in=(20, 1), out=(160.0, 1), looseness=0.75] (0) to (1);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(320, 1), out=(220.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(40, 1), out=(140.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(20, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -596,11 +596,11 @@
 \node [style=White] (4) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(0, 1), out=(279.1, 1), looseness=0.75] (0) to (5);)
-\draw [in=(60.9, 1), out=(240.9, 1), looseness=0.75] (1) to (4);)
-\draw [in=(80.9, 1), out=(299.1, 1), looseness=0.75] (1) to (5);)
-\draw [in=(240.9, 1), out=(319.1, 1), looseness=0.75] (2) to (5);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(0, 1), out=(279.1, 1), looseness=0.75] (0) to (5));
+\draw [in=(60.9, 1), out=(240.9, 1), looseness=0.75] (1) to (4));
+\draw [in=(80.9, 1), out=(299.1, 1), looseness=0.75] (1) to (5));
+\draw [in=(240.9, 1), out=(319.1, 1), looseness=0.75] (2) to (5));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -611,11 +611,11 @@
 \node [style=Black] (2) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(239.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(340, 1), out=(179.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(99.1, 1), out=(259.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(119.1, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(239.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(179.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(99.1, 1), out=(259.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(119.1, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -627,11 +627,11 @@
 \node [style=White] (4) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(239.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(340, 1), out=(199.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(60.9, 1), out=(240.9, 1), looseness=0.75] (1) to (4);)
-\draw [in=(80.9, 1), out=(299.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(259.1, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(239.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(199.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(60.9, 1), out=(240.9, 1), looseness=0.75] (1) to (4));
+\draw [in=(80.9, 1), out=(299.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(259.1, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -642,11 +642,11 @@
 \node [style=Black] (2) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(239.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(340, 1), out=(219.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(259.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(99.1, 1), out=(299.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(279.1, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(239.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(219.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(259.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(99.1, 1), out=(299.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(279.1, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -658,11 +658,11 @@
 \node [style=White] (3) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0.2, 1), looseness=0.75] (0) to (3);)
-\draw [in=(0, 1), out=(259.1, 1), looseness=0.75] (0) to (4);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (4);)
-\draw [in=(139.1, 1), out=(340.2, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(279.1, 1), looseness=0.75] (2) to (4);)
+\draw [in=(180.0, 1), out=(0.2, 1), looseness=0.75] (0) to (3));
+\draw [in=(0, 1), out=(259.1, 1), looseness=0.75] (0) to (4));
+\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (4));
+\draw [in=(139.1, 1), out=(340.2, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(279.1, 1), looseness=0.75] (2) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -673,11 +673,11 @@
 \node [style=Black] (2) at (-0.5, -0.9) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(219.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(340, 1), out=(139.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(99.1, 1), out=(279.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(240.9, 1), out=(59.1, 1), looseness=0.75] (2) to (3);)
+\draw [in=(0, 1), out=(219.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(139.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(99.1, 1), out=(279.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(240.9, 1), out=(59.1, 1), looseness=0.75] (2) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -689,27 +689,27 @@
 \node [style=White] (3) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(0, 1), out=(239.1, 1), looseness=0.75] (0) to (4);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (4);)
-\draw [in=(99.1, 1), out=(279.1, 1), looseness=0.75] (1) to (4);)
-\draw [in=(240.9, 1), out=(259.1, 1), looseness=0.75] (2) to (4);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(0, 1), out=(239.1, 1), looseness=0.75] (0) to (4));
+\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (4));
+\draw [in=(99.1, 1), out=(279.1, 1), looseness=0.75] (1) to (4));
+\draw [in=(240.9, 1), out=(259.1, 1), looseness=0.75] (2) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
-\node [style=Black] (1) at (1.0, 0.0) {};
-\node [style=White] (3) at (-0.5, 0.9) {};
+\node [style=White] (3) at (1.0, 0.0) {};
+\node [style=Black] (1) at (-0.5, 0.9) {};
 \node [style=White] (4) at (-0.5, -0.9) {};
-\node [style=Black] (0) at (-1.0, 0.0) {};
+\node [style=Black] (0) at (2.0, 0.0) {};
 \node [style=Black] (2) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(260.9, 1), out=(40.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(349.0, 1), out=(279.1, 1), looseness=0.75] (1) to (4);)
-\draw [in=(329.0, 1), out=(80.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (2) to (4);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4));
+\draw [in=(110.0, 1), out=(140.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(119.1, 1), out=(290.0, 1), looseness=0.75] (2) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -722,11 +722,11 @@
 \node [style=Black] (2) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(65.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(45.0, 1), out=(250.0, 1), looseness=0.75] (0) to (5);)
-\draw [in=(70.0, 1), out=(225.0, 1), looseness=0.75] (1) to (4);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (5);)
-\draw [in=(180.0, 1), out=(245.0, 1), looseness=0.75] (2) to (4);)
+\draw [in=(65.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(45.0, 1), out=(250.0, 1), looseness=0.75] (0) to (5));
+\draw [in=(70.0, 1), out=(225.0, 1), looseness=0.75] (1) to (4));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (5));
+\draw [in=(180.0, 1), out=(245.0, 1), looseness=0.75] (2) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -738,11 +738,11 @@
 \node [style=White] (3) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(0, 1), out=(259.1, 1), looseness=0.75] (0) to (4);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (4);)
-\draw [in=(99.1, 1), out=(279.1, 1), looseness=0.75] (1) to (4);)
-\draw [in=(240.9, 1), out=(319.1, 1), looseness=0.75] (2) to (4);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(0, 1), out=(259.1, 1), looseness=0.75] (0) to (4));
+\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (4));
+\draw [in=(99.1, 1), out=(279.1, 1), looseness=0.75] (1) to (4));
+\draw [in=(240.9, 1), out=(319.1, 1), looseness=0.75] (2) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -754,11 +754,11 @@
 \node [style=Black] (1) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(239.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(199.1, 1), out=(20, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(239.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(199.1, 1), out=(20, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -768,11 +768,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(220.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(20, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(220.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(20, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -784,11 +784,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(299.1, 1), out=(80.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(199.1, 1), out=(340, 1), looseness=0.75] (0) to (2);)
-\draw [in=(259.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (1) to (3);)
+\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(299.1, 1), out=(80.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(199.1, 1), out=(340, 1), looseness=0.75] (0) to (2));
+\draw [in=(259.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -800,11 +800,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4);)
-\draw [in=(299.1, 1), out=(99.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(279.1, 1), out=(119.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(240.9, 1), out=(79.1, 1), looseness=0.75] (1) to (3);)
+\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4));
+\draw [in=(299.1, 1), out=(99.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(279.1, 1), out=(119.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(240.9, 1), out=(79.1, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -814,11 +814,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(140.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(20, 1), out=(220.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(20, 1), out=(220.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -830,11 +830,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(299.1, 1), out=(80.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(119.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4);)
-\draw [in=(179.1, 1), out=(340, 1), looseness=0.75] (0) to (2);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (1) to (3);)
+\draw [in=(239.1, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(299.1, 1), out=(80.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(119.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4));
+\draw [in=(179.1, 1), out=(340, 1), looseness=0.75] (0) to (2));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -844,11 +844,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(20, 1), out=(220.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(20, 1), out=(220.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -859,11 +859,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -873,11 +873,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(220.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(20, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(220.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(20, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -888,11 +888,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -903,11 +903,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -918,11 +918,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(340, 1), looseness=0.75] (0) to (3);)
-\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (0) to (3);)
-\draw [in=(140.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(340, 1), looseness=0.75] (0) to (3));
+\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (0) to (3));
+\draw [in=(140.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -933,11 +933,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (0) to (2);)
-\draw [in=(140.0, 1), out=(340, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (0) to (2));
+\draw [in=(140.0, 1), out=(340, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -947,11 +947,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(220.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(220.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -963,11 +963,11 @@
 \node [style=Black] (1) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(279.1, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(259.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4);)
-\draw [in=(239.1, 1), out=(20, 1), looseness=0.75] (0) to (2);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(279.1, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(259.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4));
+\draw [in=(239.1, 1), out=(20, 1), looseness=0.75] (0) to (2));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -977,11 +977,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(220.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(220.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -992,11 +992,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(320, 1), out=(140.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(320, 1), out=(140.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1009,11 +1009,11 @@
 \node [style=Black] (1) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(170.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(230.0, 1), out=(270.0, 1), looseness=0.75] (0) to (5);)
-\draw [in=(290.0, 1), out=(180.0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(170.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(230.0, 1), out=(270.0, 1), looseness=0.75] (0) to (5));
+\draw [in=(290.0, 1), out=(180.0, 1), looseness=0.75] (0) to (4));
+\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1024,11 +1024,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(140.0, 1), out=(340, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(140.0, 1), out=(340, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1039,11 +1039,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(20, 1), out=(140.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(320, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(20, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1054,11 +1054,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(320, 1), out=(140.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(320, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1070,11 +1070,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(279.1, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(259.1, 1), out=(340, 1), looseness=0.75] (0) to (2);)
-\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4);)
-\draw [in=(299.1, 1), out=(80.9, 1), looseness=0.75] (0) to (3);)
-\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (1) to (3);)
+\draw [in=(279.1, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(259.1, 1), out=(340, 1), looseness=0.75] (0) to (2));
+\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (0) to (4));
+\draw [in=(299.1, 1), out=(80.9, 1), looseness=0.75] (0) to (3));
+\draw [in=(240.9, 1), out=(60.9, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1085,11 +1085,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(140.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(140.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(320, 1), out=(160.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1100,11 +1100,11 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(340, 1), looseness=0.75] (0) to (3);)
-\draw [in=(160.0, 1), out=(0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(340, 1), looseness=0.75] (0) to (3));
+\draw [in=(160.0, 1), out=(0, 1), looseness=0.75] (0) to (3));
+\draw [in=(20, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1116,27 +1116,27 @@
 \node [style=White] (3) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(51.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(31.0, 1), out=(250.0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(50.0, 1), out=(240.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4);)
-\draw [in=(70.0, 1), out=(290.0, 1), looseness=0.75] (1) to (4);)
+\draw [in=(51.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(31.0, 1), out=(250.0, 1), looseness=0.75] (0) to (4));
+\draw [in=(50.0, 1), out=(240.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4));
+\draw [in=(70.0, 1), out=(290.0, 1), looseness=0.75] (1) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
 \node [style=Black] (0) at (1.0, 0.0) {};
-\node [style=Black] (1) at (-0.5, 0.9) {};
-\node [style=White] (2) at (-0.5, -0.9) {};
+\node [style=White] (2) at (-0.5, 0.9) {};
+\node [style=Black] (1) at (-0.5, -0.9) {};
 \node [style=White] (4) at (2.0, 0.0) {};
 \node [style=White] (3) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(31.0, 1), out=(230.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(51.0, 1), out=(0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(70.0, 1), out=(250.0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(50.0, 1), out=(240.9, 1), looseness=0.75] (1) to (3);)
+\draw [in=(329.0, 1), out=(110.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(309.0, 1), out=(0, 1), looseness=0.75] (0) to (4));
+\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (1) to (2));
+\draw [in=(250.0, 1), out=(70.0, 1), looseness=0.75] (1) to (2));
+\draw [in=(290.0, 1), out=(119.1, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1146,11 +1146,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(340, 1), looseness=0.75] (1) to (2);)
-\draw [in=(160.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(200.0, 1), out=(320, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(340, 1), looseness=0.75] (1) to (2));
+\draw [in=(160.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
+\draw [in=(200.0, 1), out=(320, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1162,26 +1162,26 @@
 \node [style=Black] (0) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0.2, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340.2, 1), out=(139.1, 1), looseness=0.75] (0) to (3);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(279.1, 1), out=(240.9, 1), looseness=0.75] (1) to (4);)
-\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0.2, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340.2, 1), out=(139.1, 1), looseness=0.75] (0) to (3));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(279.1, 1), out=(240.9, 1), looseness=0.75] (1) to (4));
+\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
-\node [style=Black] (1) at (1.0, 0.0) {};
-\node [style=White] (2) at (-1.0, 0.0) {};
-\node [style=White] (3) at (2.0, 0.0) {};
-\node [style=Black] (0) at (-2.0, 0.0) {};
+\node [style=White] (2) at (1.0, 0.0) {};
+\node [style=Black] (1) at (-1.0, 0.0) {};
+\node [style=Black] (0) at (2.0, 0.0) {};
+\node [style=White] (3) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(0, 1), out=(160.0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(340, 1), out=(180.0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(180.0, 1), out=(340, 1), looseness=0.75] (1) to (2));
+\draw [in=(160.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1191,11 +1191,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(120, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(180, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(40, 1), looseness=0.75] (1) to (2);)
-\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (1) to (2);)
-\draw [in=(200.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(120, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(180, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(40, 1), looseness=0.75] (1) to (2));
+\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (1) to (2));
+\draw [in=(200.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1205,11 +1205,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(120, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(180, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (1) to (2);)
-\draw [in=(200.0, 1), out=(40, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(120, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(180, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
+\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (1) to (2));
+\draw [in=(200.0, 1), out=(40, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1220,26 +1220,26 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (1) to (3);)
-\draw [in=(200.0, 1), out=(20, 1), looseness=0.75] (1) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
+\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (1) to (3));
+\draw [in=(200.0, 1), out=(20, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
 \node [style=Black] (0) at (1.0, 0.0) {};
-\node [style=Black] (1) at (0.0, 1.0) {};
-\node [style=White] (2) at (-1.0, 0.0) {};
+\node [style=White] (2) at (0.0, 1.0) {};
+\node [style=Black] (1) at (-1.0, 0.0) {};
 \node [style=White] (3) at (0.0, -1.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(45.0, 1), out=(250.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(50.0, 1), out=(160.0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(70.0, 1), out=(290.0, 1), looseness=0.75] (1) to (3);)
+\draw [in=(315.0, 1), out=(135.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(295.0, 1), out=(295.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(225.0, 1), out=(115.0, 1), looseness=0.75] (1) to (2));
+\draw [in=(205.0, 1), out=(315.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(245.0, 1), out=(335.0, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1252,26 +1252,26 @@
 \node [style=White] (5) at (3.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (5);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(279.1, 1), out=(0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (1) to (4);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (5));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(279.1, 1), out=(0, 1), looseness=0.75] (1) to (2));
+\draw [in=(319.1, 1), out=(240.9, 1), looseness=0.75] (1) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
-\node [style=Black] (1) at (1.0, 0.0) {};
-\node [style=White] (2) at (-1.0, 0.0) {};
-\node [style=White] (3) at (2.0, 0.0) {};
-\node [style=Black] (0) at (-2.0, 0.0) {};
+\node [style=White] (2) at (1.0, 0.0) {};
+\node [style=Black] (1) at (-1.0, 0.0) {};
+\node [style=Black] (0) at (2.0, 0.0) {};
+\node [style=White] (3) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (1) to (3);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1281,11 +1281,11 @@
 \node [style=Black] (1) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(320, 1), looseness=0.75] (1) to (2);)
-\draw [in=(160.0, 1), out=(0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(320, 1), looseness=0.75] (1) to (2));
+\draw [in=(160.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
+\draw [in=(200.0, 1), out=(340, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1297,11 +1297,11 @@
 \node [style=White] (3) at (-1.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(51.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(31.0, 1), out=(250.0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(70.0, 1), out=(240.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(50.0, 1), out=(260.9, 1), looseness=0.75] (1) to (3);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4);)
+\draw [in=(51.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(31.0, 1), out=(250.0, 1), looseness=0.75] (0) to (4));
+\draw [in=(70.0, 1), out=(240.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(50.0, 1), out=(260.9, 1), looseness=0.75] (1) to (3));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1313,11 +1313,11 @@
 \node [style=Black] (0) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (1) to (3);)
-\draw [in=(279.1, 1), out=(240.9, 1), looseness=0.75] (1) to (4);)
-\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(299.1, 1), out=(119.1, 1), looseness=0.75] (1) to (3));
+\draw [in=(279.1, 1), out=(240.9, 1), looseness=0.75] (1) to (4));
+\draw [in=(259.1, 1), out=(0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1328,72 +1328,56 @@
 \node [style=Black] (1) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (1) to (3);)
-\draw [in=(200.0, 1), out=(320, 1), looseness=0.75] (1) to (3);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3));
+\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (1) to (3));
+\draw [in=(200.0, 1), out=(320, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
-\node [style=Black] (1) at (1.0, 0.0) {};
-\node [style=White] (2) at (-1.0, 0.0) {};
-\node [style=White] (3) at (2.0, 0.0) {};
-\node [style=Black] (0) at (-2.0, 0.0) {};
+\node [style=White] (2) at (1.0, 0.0) {};
+\node [style=Black] (1) at (-1.0, 0.0) {};
+\node [style=Black] (0) at (2.0, 0.0) {};
+\node [style=White] (3) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(160.0, 1), out=(20, 1), looseness=0.75] (0) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (2);)
-\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(200.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
+\draw [in=(160.0, 1), out=(340, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
 \node [style=Black] (0) at (1.0, 0.0) {};
-\node [style=Black] (1) at (0.0, 1.0) {};
-\node [style=White] (2) at (-1.0, 0.0) {};
+\node [style=White] (2) at (0.0, 1.0) {};
+\node [style=Black] (1) at (-1.0, 0.0) {};
 \node [style=White] (3) at (0.0, -1.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(45.0, 1), out=(230.0, 1), looseness=0.75] (0) to (3);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(70.0, 1), out=(250.0, 1), looseness=0.75] (1) to (3);)
-\draw [in=(50.0, 1), out=(160.0, 1), looseness=0.75] (1) to (2);)
+\draw [in=(315.0, 1), out=(135.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(295.0, 1), out=(275.0, 1), looseness=0.75] (0) to (3));
+\draw [in=(205.0, 1), out=(315.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(245.0, 1), out=(295.0, 1), looseness=0.75] (1) to (3));
+\draw [in=(225.0, 1), out=(115.0, 1), looseness=0.75] (1) to (2));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
 \begin{pgfonlayer}{nodelayer}
-\node [style=Black] (1) at (1.0, 0.0) {};
-\node [style=White] (2) at (-1.0, 0.0) {};
-\node [style=White] (3) at (2.0, 0.0) {};
-\node [style=Black] (0) at (-2.0, 0.0) {};
+\node [style=White] (2) at (1.0, 0.0) {};
+\node [style=Black] (1) at (-1.0, 0.0) {};
+\node [style=Black] (0) at (2.0, 0.0) {};
+\node [style=White] (3) at (-2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (2);)
-\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (0) to (2);)
-\draw [in=(0, 1), out=(260, 1), looseness=0.75] (1) to (2);)
-\draw [in=(340, 1), out=(220, 1), looseness=0.75] (1) to (2);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (3);)
-\end{pgfonlayer}
-\end{tikzpicture}
-\begin{tikzpicture}
-\begin{pgfonlayer}{nodelayer}
-\node [style=White] (4) at (0.0, 0.0) {};
-\node [style=Black] (0) at (1.0, 0.0) {};
-\node [style=Black] (1) at (0.0, 1.0) {};
-\node [style=Black] (2) at (-1.0, 0.0) {};
-\node [style=Black] (3) at (0.0, -1.0) {};
-\end{pgfonlayer}
-\begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(210.0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(340, 1), out=(190.0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4);)
-\draw [in=(180.0, 1), out=(10.0, 1), looseness=0.75] (2) to (4);)
-\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (3) to (4);)
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(340, 1), out=(140.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
+\draw [in=(160.0, 1), out=(320, 1), looseness=0.75] (1) to (2));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (1) to (3));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1405,11 +1389,27 @@
 \node [style=Black] (3) at (0.0, -1.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(190.0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(340, 1), out=(130.0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4);)
-\draw [in=(180.0, 1), out=(30.0, 1), looseness=0.75] (2) to (4);)
-\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (3) to (4);)
+\draw [in=(0, 1), out=(210.0, 1), looseness=0.75] (0) to (4));
+\draw [in=(340, 1), out=(190.0, 1), looseness=0.75] (0) to (4));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4));
+\draw [in=(180.0, 1), out=(10.0, 1), looseness=0.75] (2) to (4));
+\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (3) to (4));
+\end{pgfonlayer}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{pgfonlayer}{nodelayer}
+\node [style=White] (4) at (0.0, 0.0) {};
+\node [style=Black] (0) at (1.0, 0.0) {};
+\node [style=Black] (1) at (0.0, 1.0) {};
+\node [style=Black] (2) at (-1.0, 0.0) {};
+\node [style=Black] (3) at (0.0, -1.0) {};
+\end{pgfonlayer}
+\begin{pgfonlayer}{edgelayer}
+\draw [in=(0, 1), out=(190.0, 1), looseness=0.75] (0) to (4));
+\draw [in=(340, 1), out=(130.0, 1), looseness=0.75] (0) to (4));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4));
+\draw [in=(180.0, 1), out=(30.0, 1), looseness=0.75] (2) to (4));
+\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (3) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1422,11 +1422,11 @@
 \node [style=Black] (3) at (3.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(0, 1), out=(279.1, 1), looseness=0.75] (0) to (5);)
-\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (5);)
-\draw [in=(240.9, 1), out=(319.1, 1), looseness=0.75] (2) to (5);)
-\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (3) to (4);)
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (4));
+\draw [in=(0, 1), out=(279.1, 1), looseness=0.75] (0) to (5));
+\draw [in=(119.1, 1), out=(299.1, 1), looseness=0.75] (1) to (5));
+\draw [in=(240.9, 1), out=(319.1, 1), looseness=0.75] (2) to (5));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (3) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1439,11 +1439,11 @@
 \node [style=White] (5) at (2.0, 0.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(110.0, 1), looseness=0.75] (0) to (4);)
-\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (5);)
-\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4);)
-\draw [in=(180.0, 1), out=(330.0, 1), looseness=0.75] (2) to (4);)
-\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (3) to (4);)
+\draw [in=(0, 1), out=(110.0, 1), looseness=0.75] (0) to (4));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (5));
+\draw [in=(90.0, 1), out=(270.0, 1), looseness=0.75] (1) to (4));
+\draw [in=(180.0, 1), out=(330.0, 1), looseness=0.75] (2) to (4));
+\draw [in=(270.0, 1), out=(90.0, 1), looseness=0.75] (3) to (4));
 \end{pgfonlayer}
 \end{tikzpicture}
 \begin{tikzpicture}
@@ -1456,10 +1456,10 @@
 \node [style=Black] (4) at (0.3, -1.0) {};
 \end{pgfonlayer}
 \begin{pgfonlayer}{edgelayer}
-\draw [in=(0, 1), out=(186.7, 1), looseness=0.75] (0) to (5);)
-\draw [in=(73.3, 1), out=(253.3, 1), looseness=0.75] (1) to (5);)
-\draw [in=(143.1, 1), out=(273.3, 1), looseness=0.75] (2) to (5);)
-\draw [in=(216.9, 1), out=(333.3, 1), looseness=0.75] (3) to (5);)
-\draw [in=(286.7, 1), out=(106.7, 1), looseness=0.75] (4) to (5);)
+\draw [in=(0, 1), out=(186.7, 1), looseness=0.75] (0) to (5));
+\draw [in=(73.3, 1), out=(253.3, 1), looseness=0.75] (1) to (5));
+\draw [in=(143.1, 1), out=(273.3, 1), looseness=0.75] (2) to (5));
+\draw [in=(216.9, 1), out=(333.3, 1), looseness=0.75] (3) to (5));
+\draw [in=(286.7, 1), out=(106.7, 1), looseness=0.75] (4) to (5));
 \end{pgfonlayer}
 \end{tikzpicture}

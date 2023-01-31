@@ -1,5 +1,6 @@
 import numpy as np
 import utils
+from itertools import chain, zip_longest
 
 class Graph:
     def __init__(self, dessin):
@@ -44,7 +45,8 @@ class Graph:
         blackConnections = self.genImmediateConnectedNodes(self.dessin.black, self.dessin.white)
         whiteConnections = self.genImmediateConnectedNodes(self.dessin.white, self.dessin.black)
         
-        connections = {i:j for i, j in list(blackConnections.items()) + list(whiteConnections.items())}
+        connections = {x[0]:x[1] for x in chain(*zip_longest(blackConnections.items(), whiteConnections.items())) if x is not None}
+        
         sortedConnections = sorted(connections.items(), key=lambda item: len(item[1]), reverse=True)
 
         # Getting all nodes of highest connected edges
@@ -163,7 +165,7 @@ class Graph:
         latex += "\\begin{pgfonlayer}{edgelayer}\n"
 
         for data in self.edges.values():
-            latex += f"\\draw [in={data['angleIn']}, out={data['angleOut']}, looseness=0.75] ({data['to']}) to ({data['from']});)\n"
+            latex += f"\\draw [in={data['angleIn']}, out={data['angleOut']}, looseness=0.75] ({data['to']}) to ({data['from']}));\n"
 
         latex += "\\end{pgfonlayer}\n"
         latex += "\\end{tikzpicture}\n"
