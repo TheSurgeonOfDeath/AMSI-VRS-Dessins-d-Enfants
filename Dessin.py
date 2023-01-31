@@ -22,7 +22,7 @@ def isMorphism(alpha, F, G):
     if F.nEdges % G.nEdges != 0:
         return False
     for e in range(1, len(alpha) + 1):
-    #alpha fb = gb alpha
+        # alpha fb = gb alpha
         if alpha[permute(F.b, e)-1] != permute(G.b, alpha[e-1]):
             return False
         elif alpha[permute(F.w, e)-1] != permute(G.w, alpha[e-1]):
