@@ -1,10 +1,10 @@
-from Dessin import Dessin, findSurjMaps, findSurjMaps2, randDessin
+from Dessin import Dessin, findSurjMaps, findValidMaps, randDessin, findMorphisms, findMorphisms2
 import time
 import random
 
 # source
-# random.seed(10)
-# randDes = randDessin(12)
+random.seed(10)
+randDes = randDessin(16)
 
 # fat square
 fb = [(2,3,1,4), (6,7,5,8)]
@@ -34,12 +34,18 @@ V = Dessin(vb, vw)
 targets = [G, H, U, V]
 
 tic = time.perf_counter()
-print([findSurjMaps(F, des) for des in targets])
+M1 = [findMorphisms(F, des) for des in targets]
+toc = time.perf_counter()
+print(f"findValidMaps time: {toc - tic:0.4f} seconds")
+
+tic = time.perf_counter()
+M2 = [findMorphisms2(F, des) for des in targets]
 toc = time.perf_counter()
 print(f"findSurjMaps time: {toc - tic:0.4f} seconds")
 
-# tic = time.perf_counter()
-# print([findSurjMaps2(F, des) for des in targets])
-# toc = time.perf_counter()
-# print(f"findSurjMaps2 time: {toc - tic:0.4f} seconds")
+print(M1 == M2)
+print([len(m) for m in M1])
+print([len(m) for m in M2])
+print(M1[0])
+print(M2[0])
 
