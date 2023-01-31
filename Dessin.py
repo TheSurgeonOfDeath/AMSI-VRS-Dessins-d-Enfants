@@ -7,6 +7,7 @@ from itertools import chain, combinations, permutations, combinations_with_repla
 from sympy.combinatorics.named_groups import SymmetricGroup
 from sympy.combinatorics import Permutation, PermutationGroup
 import random
+from unique_permutations import unique_permutations
 
 def max_value(inputlist):
     return max(max(sublist) for sublist in inputlist)
@@ -43,8 +44,12 @@ def findSurjMaps(F, G):
 def findValidMaps(F, G):
     if F.nEdges % G.nEdges != 0:
         return []
-    maps = list(G.Edges) * int(F.nEdges / G.nEdges)
-    return list(permutations(maps))
+    return list(set(permutations(list(G.Edges) * int(F.nEdges / G.nEdges))))
+
+def findValidMaps2(F, G):
+    if F.nEdges % G.nEdges != 0:
+        return []
+    return list(unique_permutations(tuple(G.Edges) * int(F.nEdges / G.nEdges)))
 
 def findMorphisms(F, G):
     return [validMap for validMap in findValidMaps(F, G) if isMorphism(validMap, F, G)]
