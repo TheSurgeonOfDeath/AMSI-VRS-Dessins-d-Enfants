@@ -31,7 +31,7 @@ G = Dessin(gb, gw)
 # H = Dessin(hb, hw)
 
 dessins = []
-for n in [1,2,3,4]:
+for n in [1,2,3,4,6]:
     with open(f"data/dessins_order({n}).json", 'r') as f:
         dessins.append(jsonpickle.decode(f.read()))
 # print([len(desns) for desns in dessins])

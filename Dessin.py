@@ -29,17 +29,6 @@ def isMorphism(alpha, F, G):
             return False
     return True
 
-# def findSurjMaps(F, G):
-#     if F.nEdges % G.nEdges != 0:
-#         return []
-#     Maps = list(product(G.Edges, repeat = F.nEdges))
-#     return [Map for Map in Maps if set(G.Edges) <= set(Map)]
-
-# def findValidMaps2(F, G):
-#     if F.nEdges % G.nEdges != 0:
-#         return []
-#     return list(set(permutations(list(G.Edges) * int(F.nEdges / G.nEdges))))
-
 def findValidMaps(F, G):
     if F.nEdges % G.nEdges != 0:
         return []
@@ -52,10 +41,6 @@ def findValidMaps(F, G):
 
 def findMorphisms(F, G):
     return [validMap for validMap in findValidMaps(F, G) if isMorphism(validMap, F, G)]
-
-# def findMorphisms2(F, G):
-#     return [validMap for validMap in findValidMaps2(F, G) if isMorphism(validMap, F, G)]
-
 
 def areMorphic(F, G):
     return next(
