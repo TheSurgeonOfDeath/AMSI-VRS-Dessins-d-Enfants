@@ -18,6 +18,8 @@ def permute(permutation, n):
                 return row[(i + 1) % len(row)]
 
 def isMorphism(alpha, F, G):
+    if F.nEdges % G.nEdges != 0:
+        return False
     for e in range(1, len(alpha) + 1):
     #alpha fb = gb alpha
         if alpha[permute(F.b, e)-1] != permute(G.b, alpha[e-1]):
@@ -27,6 +29,8 @@ def isMorphism(alpha, F, G):
     return True
 
 def findSurjMaps(F, G):
+    if F.nEdges % G.nEdges != 0:
+        return []
     Maps = list(product(G.Edges, repeat = F.nEdges))
     return [Map for Map in Maps if set(G.Edges) <= set(Map)]
 
@@ -36,12 +40,21 @@ def findSurjMaps(F, G):
 #     posMaps = [surj.extend(rest) for rest in rests]
 #     return list(permutations(posMaps))
 
+def findValidMaps(F, G):
+    if F.nEdges % G.nEdges != 0:
+        return []
+    maps = list(G.Edges) * int(F.nEdges / G.nEdges)
+    return list(permutations(maps))
+
 def findMorphisms(F, G):
+    return [validMap for validMap in findValidMaps(F, G) if isMorphism(validMap, F, G)]
+
+def findMorphisms2(F, G):
     return [surjMap for surjMap in findSurjMaps(F, G) if isMorphism(surjMap, F, G)]
 
 def areMorphic(F, G):
     return next(
-        (True for surjMap in findSurjMaps(F, G) if isMorphism(surjMap, F, G)), False
+        (True for validMap in findValidMaps(F, G) if isMorphism(validMap, F, G)), False
     )
 
 def powerset(iterable):
@@ -92,7 +105,6 @@ def randomise(arr):
         # Swap arr[i] with the element at random index
         arr[i],arr[j] = arr[j],arr[i]
     return arr
-
 
 def randPerm(n):
     return [tuple(e + 1 for e in cycle) for cycle in Permutation(randomise(list(range(n)))).full_cyclic_form]
