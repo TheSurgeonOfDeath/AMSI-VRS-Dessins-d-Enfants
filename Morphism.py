@@ -75,7 +75,7 @@ class Morphism:
         return status
 
     def findMorphisms(F, G):
-        nEdgesF = 
+        nEdgesF = F.size
         nEdgesG = G.size
         
         # Checking fibre's condition
