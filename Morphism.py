@@ -1,4 +1,4 @@
-from Dessin import Dessin
+from LDessin import Dessin
 from itertools import permutations
 
 class Morphism:
