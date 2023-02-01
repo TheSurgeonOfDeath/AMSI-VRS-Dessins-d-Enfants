@@ -1,6 +1,25 @@
 from unique_permutations import unique_permutations
-p1 = list(unique_permutations((1,1,2,2)))
-p2 = [tuple(perm) for perm in unique_permutations((1,1,2,2))]
+import time
+from itertools import permutations
 
-print(p1)
-print(p2)
+base = list(range(1,3)) * 4
+
+tic = time.perf_counter_ns()
+p1 = list(unique_permutations(base))
+toc = time.perf_counter_ns()
+print(f"p1: {toc - tic}")
+
+tic = time.perf_counter_ns()
+p2 = [tuple(perm) for perm in unique_permutations(base)]
+toc = time.perf_counter_ns()
+print(f"p2: {toc - tic}")
+
+tic = time.perf_counter_ns()
+p3 = list(set(permutations(base)))
+toc = time.perf_counter_ns()
+print(f"p3: {toc - tic}")
+
+
+# print(p1)
+# print(p2)
+# print(p3)

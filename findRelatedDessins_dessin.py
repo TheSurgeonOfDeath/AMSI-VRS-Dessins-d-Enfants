@@ -1,8 +1,9 @@
 # Find all dessins that a given dessin can be morphed to
 
-from Dessin import Dessin, areMorphic
+from Dessin import Dessin, areMorphic, findMorphisms
 from functools import reduce
 import jsonpickle
+from readableNestedList import readableNestedList
 
 # def factors(n):   
 #     # source: https://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python 
@@ -33,21 +34,28 @@ morphicsPerSrc = [
      for src in dessinsSrc
 ]
 
-# nonTrivMorphics = [
-    # dessinsSrc[i] for i, morphs in enumerate(morphicsPerSrc) if morphs
-# ]
+srcNtars = [
+    (dessinsSrc[i], morphs) for i, morphs in enumerate(morphicsPerSrc) if morphs
+]
+# print(srcNtars)
+for snt in srcNtars:
+    # print(readableNestedList(snt[0].Faces))
+    snt[0].printEulerCharacteristic()
+    for t in snt[1]:
+        t.printEulerCharacteristic()
+        # print(readableNestedList(t.Faces))
+        # print(readableNestedList(findMorphisms(snt[0], t)))
+    print('\n')
 
-
-# print(len(nonTrivMorphics))
 # print([(i, dessinsSrc[i].EulerChi, len(morphs)) for i, morphs in enumerate(morphicsPerSrc) if morphs])
 
 # for i, morphs in enumerate(morphicsPerSrc):
 #     if morphs:
 #         print(i, dessinsSrc[i].EulerChi, len(morphs))
 
-dessinsSrc[543].printEulerCharacteristic()
-[morphic.printEulerCharacteristic() for morphic in morphicsPerSrc[543]]
+# dessinsSrc[543].printEulerCharacteristic()
+# [morphic.printEulerCharacteristic() for morphic in morphicsPerSrc[543]]
 
-print(dessinsSrc[543].mono)
-print([morphic.mono for morphic in morphicsPerSrc[543]])
+# print(dessinsSrc[543].mono)
+# print([morphic.mono for morphic in morphicsPerSrc[543]])
 

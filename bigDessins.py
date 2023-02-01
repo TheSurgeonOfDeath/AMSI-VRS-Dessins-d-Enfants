@@ -15,7 +15,7 @@ import time
 # print(score2)
 
 # order
-n = 7
+n = 6
 
 
 # Generate dessins
@@ -38,10 +38,10 @@ print(f"Writing time: {toc - tic:0.4f} seconds")
 
 
 # read dessin from file
-tic = time.perf_counter()
-with open(f"data/dessins_order({n}).json", 'r') as f:
-    loadedDessins = jsonpickle.decode(f.read())
-toc = time.perf_counter()
+# tic = time.perf_counter()
+# with open(f"data/dessins_order({n}).json", 'r') as f:
+#     loadedDessins = jsonpickle.decode(f.read())
+# toc = time.perf_counter()
 # print(f"Loading time: {toc - tic:0.4f} seconds")
 
 # print(len(loadedDessins))

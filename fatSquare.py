@@ -27,17 +27,24 @@ vb = [(1,), (2,)]
 vw = [(1,2)]
 V = Dessin(vb, vw)
 
-# # morphisms
+# calculate Euler characteristics
+F.calcEulerChi()
+G.calcEulerChi()
+H.calcEulerChi()
+U.calcEulerChi()
+V.calcEulerChi()
+
+
+# morphisms
 # morphisms = findMorphisms(F, G)
 # print(f"Mophisms: {readableNestedList(morphisms)}")
 # alpha = morphisms[1]
 
 
 # Euler Characteristic
-# F.printEulerCharacteristic()
-# G.printEulerCharacteristic()
-# H.printEulerCharacteristic()
-# U.printEulerCharacteristic()
-# V.printEulerCharacteristic()
+F.printEulerCharacteristic()
+G.printEulerCharacteristic()
+H.printEulerCharacteristic()
+U.printEulerCharacteristic()
+V.printEulerCharacteristic()
 # print(findMorphisms(F,U))
-print(F.monoStr)

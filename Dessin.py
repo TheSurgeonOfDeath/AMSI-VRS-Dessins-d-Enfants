@@ -78,9 +78,9 @@ def generate_dessins(n):
             dessins.append(des)
 
             # Check opposite colouring of des
-            des2 = Dessin(pair[1], pair[0])
-            if not areIsomorphic(des, des2):
-                dessins.append(des2)
+            desOp = Dessin(pair[1], pair[0])
+            if not areIsomorphic(des, desOp):
+                dessins.append(desOp)
     return dessins
 
 
@@ -123,8 +123,7 @@ class Dessin:
 
     def findFaces(self):
         faces = []
-        nEdges = max_value(self.b)
-        for e in range(1, nEdges + 1):
+        for e in range(1, self.nEdges + 1):
             for i in range(len(self.monoStr)):
                 face = []
                 f0 = (e, self.monoStr[i])
