@@ -41,8 +41,10 @@ srcNtars = [
 for snt in srcNtars:
     # print(readableNestedList(snt[0].Faces))
     snt[0].printEulerCharacteristic()
+    print(snt[0].mono)
     for t in snt[1]:
         t.printEulerCharacteristic()
+        print(t.mono)
         # print(readableNestedList(t.Faces))
         # print(readableNestedList(findMorphisms(snt[0], t)))
     print('\n')
