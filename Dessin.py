@@ -13,7 +13,7 @@ def find_in_list_of_lists(mylist, elem):
     for sublist in mylist:
         if elem in sublist:
             return (mylist.index(sublist), sublist.index(elem))
-    raise ValueError(f"{elem} is not in list")
+    raise ValueError(f"'{elem}' is not in list")
 
 def permute(perm, n):
     pos = find_in_list_of_lists(perm, n)
