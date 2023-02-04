@@ -1,7 +1,5 @@
 # Module for dessins
-
 import json
-from itertools import product
 from readableNestedList import readableNestedList
 from itertools import chain, combinations, permutations, combinations_with_replacement
 import random
@@ -25,6 +23,7 @@ def applyPermutation(perm, arr):
     return [permute(perm, n) for n in arr]
 
 def array2cyclic(array_form):
+    # modified from: sympy.combinatorics.permutations cyclic_form()
     unchecked = [True] * len(array_form)
     cyclic_form = []
     for i in range(len(array_form)):

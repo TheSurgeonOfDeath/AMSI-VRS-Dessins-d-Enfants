@@ -3,8 +3,8 @@ from itertools import permutations
 from readableNestedList import readableNestedList
 
 # fat square
-fb = [(2,3,1,4), (6,7,5,8)]
-fw = [(1,7,2,8), (4,5,3,6)]
+fb = [(1,2,3), (4,5,6), (7,8)]
+fw = [(1,2), (7,3,5), (4,8)]
 F = Dessin(fb, fw)
 
 
