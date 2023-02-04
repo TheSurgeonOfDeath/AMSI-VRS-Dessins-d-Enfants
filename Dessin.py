@@ -30,15 +30,15 @@ def array2cyclic(array_form):
     unchecked = [True] * len(array_form)
     cyclic_form = []
     for i in range(len(array_form)):
-    if unchecked[i]:
-        cycle = [i + 1]
-        unchecked[i] = False
-        j = i
-        while unchecked[array_form[j] - 1]:
-            j = array_form[j]
-            cycle.append(j + 1)
-            unchecked[j] = False
-        cyclic_form.append(tuple(cycle))
+        if unchecked[i]:
+            cycle = [i + 1]
+            unchecked[i] = False
+            j = i
+            while unchecked[array_form[j] - 1]:
+                j = array_form[j]
+                cycle.append(j + 1)
+                unchecked[j] = False
+            cyclic_form.append(tuple(cycle))
     return cyclic_form
 
 def isMorphism(alpha, F, G):
