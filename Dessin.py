@@ -1,7 +1,7 @@
 # Module for dessins
 import json
 from readableNestedList import readableNestedList
-from itertools import chain, combinations, permutations, combinations_with_replacement
+from itertools import chain, combinations, permutations
 import random
 from unique_permutations import unique_permutations
 
@@ -83,10 +83,11 @@ def generate_dessins(n):
     SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
 
     # list of pairs of permutations (in cyclic form) in Sn
-    SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))
+    SnCyclesSquared = list(combinations(SnCycles, 2))
 
     # Find all valid dessins
-    dessins = []
+    permOfSymmetricDessin = [tuple(range(1, n+1))]
+    dessins = [Dessin(permOfSymmetricDessin, permOfSymmetricDessin)]
     for i, pair in enumerate(SnCyclesSquared):
         print([len(dessins), i, len(SnCyclesSquared)])
         des = Dessin(pair[0], pair[1])
