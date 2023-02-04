@@ -4,8 +4,6 @@ import json
 from itertools import product
 from readableNestedList import readableNestedList
 from itertools import chain, combinations, permutations, combinations_with_replacement
-# from sympy.combinatorics.named_groups import SymmetricGroup
-# from sympy.combinatorics import Permutation, PermutationGroup
 import random
 from unique_permutations import unique_permutations
 
@@ -195,14 +193,6 @@ class Dessin:
         bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
         wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
         return all(x not in bSubsets for x in wSubsets)
-
-    # def isConnected2(self):
-    #     # Checks if the underlying group is transitive
-    #     perm_zero_index = lambda perm : [tuple(e - 1 for e in cycle) for cycle in perm]
-    #     pfb = Permutation(perm_zero_index(self.b))
-    #     pfw = Permutation(perm_zero_index(self.w))
-    #     Fgrp = PermutationGroup(pfb, pfw)
-    #     return Fgrp.is_transitive()
 
     def toJSON(self):
         return json.dumps(self, default=lambda o: o.__dict__, 
