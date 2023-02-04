@@ -4,7 +4,7 @@ import json
 from itertools import product
 from readableNestedList import readableNestedList
 from itertools import chain, combinations, permutations, combinations_with_replacement
-from sympy.combinatorics.named_groups import SymmetricGroup
+# from sympy.combinatorics.named_groups import SymmetricGroup
 # from sympy.combinatorics import Permutation, PermutationGroup
 import random
 from unique_permutations import unique_permutations
@@ -35,7 +35,7 @@ def array2cyclic(array_form):
             unchecked[i] = False
             j = i
             while unchecked[array_form[j] - 1]:
-                j = array_form[j]
+                j = array_form[j] - 1
                 cycle.append(j + 1)
                 unchecked[j] = False
             cyclic_form.append(tuple(cycle))
@@ -83,11 +83,7 @@ def areIsomorphic(F, G):
     return any(isMorphism(alpha, F, G) for alpha in alphas)
 
 def generate_dessins(n):
-    G = SymmetricGroup(n)
-    Sn = list(G.generate(method = 'coset', af=False))
-
-    # write permutations in cyclic form, make cycles tuples and rightshift +1
-    SnCycles = [[tuple(e + 1 for e in cycle) for cycle in p.full_cyclic_form] for p in Sn]
+    SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
 
     # list of pairs of permutations (in cyclic form) in Sn
     SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))

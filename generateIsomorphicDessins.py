@@ -12,5 +12,13 @@ F = Dessin(fb, fw)
 
 alphas = list(permutations(F.Edges))
 
-# isomorphic2F = [Dessin(applyPermutation(alpha, F.b), applyPermutation(alpha, F.w)) for alpha in alphas]
-# print(readableNestedList(isomorphic2F))
+alphas = [array2cyclic(alpha) for alpha in alphas]
+# print(readableNestedList(alphas))
+# print(len(alphas))
+isomorphic2F = []
+for alpha in alphas:
+    newb = [tuple(applyPermutation(alpha, cycle)) for cycle in F.b]
+    neww = [tuple(applyPermutation(alpha, cycle)) for cycle in F.w]
+    isomorphic2F.append(Dessin(newb, neww))
+
+print(readableNestedList([des.mono for des in isomorphic2F]))
