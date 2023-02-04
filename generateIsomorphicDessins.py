@@ -1,8 +1,6 @@
 from Dessin import Dessin, applyPermutation, array2cyclic
 from itertools import permutations
-from sympy.combinatorics.named_groups import SymmetricGroup
 from readableNestedList import readableNestedList
-import time
 
 # fat square
 fb = [(2,3,1,4), (6,7,5,8)]
