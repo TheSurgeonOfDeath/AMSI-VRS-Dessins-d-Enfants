@@ -15,7 +15,7 @@ import jsonpickle
 # print(score2)
 
 # order
-n = 1
+n = 3
 
 # Generate dessins
 tic = time.perf_counter()
