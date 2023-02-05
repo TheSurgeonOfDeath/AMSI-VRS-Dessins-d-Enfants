@@ -23,7 +23,7 @@ with open("data/dessins_order(7)_old2.json", 'w') as f:
         f.write(line + "\n")
 
 
-with open("data/dessins_order(7).json", 'r') as f:
+with open("data/dessins_order(7)_old2.json", 'r') as f:
     dessins = jsonpickle.decode(f.read())
 
 for i, des in enumerate(dessins):
