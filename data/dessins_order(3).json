@@ -294,16 +294,12 @@
                 },
                 {
                     "py/tuple": [
-                        3,
+                        2,
                         "w"
                     ]
-                },
-                {
-                    "py/tuple": [
-                        2,
-                        "b"
-                    ]
-                },
+                }
+            ],
+            [
                 {
                     "py/tuple": [
                         1,
@@ -315,10 +311,18 @@
                         3,
                         "b"
                     ]
-                },
+                }
+            ],
+            [
                 {
                     "py/tuple": [
                         2,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
                         "w"
                     ]
                 }
@@ -330,9 +334,21 @@
                     1,
                     "b"
                 ]
+            },
+            {
+                "py/tuple": [
+                    1,
+                    "w"
+                ]
+            },
+            {
+                "py/tuple": [
+                    2,
+                    "b"
+                ]
             }
         ],
-        "nFaces": 1,
+        "nFaces": 3,
         "Vertices": [
             {
                 "py/tuple": [
@@ -350,7 +366,7 @@
             }
         ],
         "nVertices": 2,
-        "EulerChi": 0
+        "EulerChi": 2
     },
     {
         "py/object": "Dessin.Dessin",
@@ -395,7 +411,7 @@
         },
         "mono": [
             {
-                "py/id": 30
+                "py/id": 32
             },
             {
                 "py/id": 16
@@ -464,18 +480,6 @@
                 },
                 {
                     "py/tuple": [
-                        2,
-                        "w"
-                    ]
-                },
-                {
-                    "py/tuple": [
-                        3,
-                        "b"
-                    ]
-                },
-                {
-                    "py/tuple": [
                         1,
                         "w"
                     ]
@@ -483,6 +487,18 @@
                 {
                     "py/tuple": [
                         2,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
                         "b"
                     ]
                 },
@@ -536,7 +552,7 @@
             "py/id": 16
         },
         "w": {
-            "py/id": 30
+            "py/id": 32
         },
         "br": {
             "1": 2,
@@ -562,7 +578,7 @@
                 "py/id": 16
             },
             {
-                "py/id": 30
+                "py/id": 32
             }
         ],
         "semiID": {
@@ -628,35 +644,31 @@
                 },
                 {
                     "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        2,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
                         1,
-                        "w"
-                    ]
-                }
-            ],
-            [
-                {
-                    "py/tuple": [
-                        2,
-                        "b"
-                    ]
-                },
-                {
-                    "py/tuple": [
-                        2,
-                        "w"
-                    ]
-                }
-            ],
-            [
-                {
-                    "py/tuple": [
-                        3,
-                        "b"
-                    ]
-                },
-                {
-                    "py/tuple": [
-                        3,
                         "w"
                     ]
                 }
@@ -668,21 +680,9 @@
                     1,
                     "b"
                 ]
-            },
-            {
-                "py/tuple": [
-                    2,
-                    "b"
-                ]
-            },
-            {
-                "py/tuple": [
-                    3,
-                    "b"
-                ]
             }
         ],
-        "nFaces": 3,
+        "nFaces": 1,
         "Vertices": [
             {
                 "py/tuple": [
@@ -708,7 +708,7 @@
             }
         ],
         "nVertices": 4,
-        "EulerChi": 4
+        "EulerChi": 2
     },
     {
         "py/object": "Dessin.Dessin",
@@ -832,14 +832,6 @@
                 },
                 {
                     "py/tuple": [
-                        2,
-                        "w"
-                    ]
-                }
-            ],
-            [
-                {
-                    "py/tuple": [
                         1,
                         "w"
                     ]
@@ -849,9 +841,13 @@
                         2,
                         "b"
                     ]
-                }
-            ],
-            [
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "w"
+                    ]
+                },
                 {
                     "py/tuple": [
                         3,
@@ -860,7 +856,7 @@
                 },
                 {
                     "py/tuple": [
-                        3,
+                        2,
                         "w"
                     ]
                 }
@@ -872,21 +868,9 @@
                     1,
                     "b"
                 ]
-            },
-            {
-                "py/tuple": [
-                    1,
-                    "w"
-                ]
-            },
-            {
-                "py/tuple": [
-                    3,
-                    "b"
-                ]
             }
         ],
-        "nFaces": 3,
+        "nFaces": 1,
         "Vertices": [
             {
                 "py/tuple": [
@@ -912,7 +896,7 @@
             }
         ],
         "nVertices": 4,
-        "EulerChi": 4
+        "EulerChi": 2
     },
     {
         "py/object": "Dessin.Dessin",
@@ -1016,18 +1000,6 @@
                 },
                 {
                     "py/tuple": [
-                        2,
-                        "w"
-                    ]
-                },
-                {
-                    "py/tuple": [
-                        3,
-                        "b"
-                    ]
-                },
-                {
-                    "py/tuple": [
                         1,
                         "w"
                     ]
@@ -1044,6 +1016,20 @@
                         "w"
                     ]
                 }
+            ],
+            [
+                {
+                    "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "b"
+                    ]
+                }
             ]
         ],
         "initFaces": [
@@ -1052,9 +1038,15 @@
                     1,
                     "b"
                 ]
+            },
+            {
+                "py/tuple": [
+                    2,
+                    "w"
+                ]
             }
         ],
-        "nFaces": 1,
+        "nFaces": 2,
         "Vertices": [
             {
                 "py/tuple": [
@@ -1076,7 +1068,7 @@
             }
         ],
         "nVertices": 3,
-        "EulerChi": 1
+        "EulerChi": 2
     },
     {
         "py/object": "Dessin.Dessin",
@@ -1176,6 +1168,18 @@
                 },
                 {
                     "py/tuple": [
+                        2,
+                        "w"
+                    ]
+                },
+                {
+                    "py/tuple": [
+                        3,
+                        "b"
+                    ]
+                },
+                {
+                    "py/tuple": [
                         1,
                         "w"
                     ]
@@ -1194,20 +1198,6 @@
                         "w"
                     ]
                 }
-            ],
-            [
-                {
-                    "py/tuple": [
-                        2,
-                        "w"
-                    ]
-                },
-                {
-                    "py/tuple": [
-                        3,
-                        "b"
-                    ]
-                }
             ]
         ],
         "initFaces": [
@@ -1222,15 +1212,9 @@
                     2,
                     "b"
                 ]
-            },
-            {
-                "py/tuple": [
-                    2,
-                    "w"
-                ]
             }
         ],
-        "nFaces": 3,
+        "nFaces": 2,
         "Vertices": [
             {
                 "py/tuple": [
@@ -1252,6 +1236,6 @@
             }
         ],
         "nVertices": 3,
-        "EulerChi": 3
+        "EulerChi": 2
     }
 ]

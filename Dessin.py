@@ -212,14 +212,14 @@ class Dessin:
                 if any(f0 in face for face in faces):
                     continue
                 face.append(f0)
-                eNew = self.permuteBlack(e) if self.mono[i] == 'b' else self.permuteWhite(e)
+                eNew = self.permuteBlack(e) if self.monoStr[i] == 'b' else self.permuteWhite(e)
                 dNewIdx = i - 1
                 fNew = (eNew, self.monoStr[dNewIdx])
-                it = 0;
+                it = 0
                 while fNew != f0:
                     it += 1
                     face.append(fNew)
-                    if self.mono[dNewIdx] == 'b':
+                    if self.monoStr[dNewIdx] == 'b':
                         eNew = self.permuteBlack(eNew)
                     else:
                         eNew = self.permuteWhite(eNew)
