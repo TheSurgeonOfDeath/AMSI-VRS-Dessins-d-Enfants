@@ -27,5 +27,5 @@ G = Dessin(gb, gw)
 morphs = findMorphisms(G,F)
 print(readableNestedList(morphs))
 
-F.printEulerCharacteristic()
-G.printEulerCharacteristic()
+F.printEulerChi()
+G.printEulerChi()

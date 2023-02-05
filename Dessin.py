@@ -72,36 +72,20 @@ def powerset(iterable):
 def areIsomorphic(F, G):
     if F.nEdges != G.nEdges: #or len(F.b) != len(G.b) or len(F.w) != len(G.w):
         return False
-
     alphas = permutations(F.Edges)
-
-
-    for alpha in alphas:
-        if isMorphism(alpha, F, G):
-            return True
-
-    return False
+    return any(isMorphism(alpha, F, G) for alpha in alphas)
 
 def compute(i):
     global dessinsTest
     d = dessinsTest[i]
-    uniqueDessin = []
-
+    uniqueDessins = []
     for dessin in d:
         if not dessin.isConnected():
             continue
-
-        iso = False
-        for unique in uniqueDessin:
-            if areIsomorphic(dessin, unique):
-                iso = True
-                break
-
+        iso = any(areIsomorphic(dessin, unique) for unique in uniqueDessins)
         if not iso:
-            uniqueDessin.append(dessin)
-
-
-    return uniqueDessin
+            uniqueDessins.append(dessin)
+    return uniqueDessins
 
 def generate_dessins(n):
     global dessinsTest
@@ -147,9 +131,8 @@ def generate_dessins_single(n):
         if c is None:
             dessins[des.semiID] = [des]
 
-        else:
-            if not any(areIsomorphic(des, d) for d in c):
-                c.append(des)
+        elif not any(areIsomorphic(des, d) for d in c):
+            c.append(des)
 
     return list(chain(*dessins.values()))
 
@@ -223,10 +206,7 @@ class Dessin:
                 if any(f0 in face for face in faces):
                     continue
                 face.append(f0)
-                if self.mono[i] == 'b':
-                    eNew = self.permuteBlack(e)
-                else:
-                    eNew = self.permuteWhite(e)
+                eNew = self.permuteBlack(e) if self.mono[i] == 'b' else self.permuteWhite(e)
                 dNewIdx = i - 1
                 fNew = (eNew, self.monoStr[dNewIdx])
                 it = 0;
@@ -255,7 +235,7 @@ class Dessin:
         self.nVertices = len(self.b) + len(self.w)
         self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
-    def printEulerCharacteristic(self):
+    def printEulerChi(self):
         if not hasattr(self, 'EulerChi'):
             self.calcEulerChi
         print(f"Faces: {readableNestedList(self.Faces)}")
@@ -274,14 +254,6 @@ class Dessin:
         bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
         wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
         return all(x not in bSubsets for x in wSubsets)
-
-    #def isConnected2(self):
-        # Checks if the underlying group is transitive
-        #perm_zero_index = lambda perm : [tuple(e - 1 for e in cycle) for cycle in perm]
-        #pfb = Permutation(perm_zero_index(self.b))
-        #pfw = Permutation(perm_zero_index(self.w))
-        #Fgrp = PermutationGroup(pfb, pfw)
-        #return Fgrp.is_transitive()
 
     def permuteBlack(self, n):
         return self.br[n]

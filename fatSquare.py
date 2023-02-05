@@ -42,9 +42,9 @@ V.calcEulerChi()
 
 
 # Euler Characteristic
-F.printEulerCharacteristic()
-G.printEulerCharacteristic()
-H.printEulerCharacteristic()
-U.printEulerCharacteristic()
-V.printEulerCharacteristic()
+F.printEulerChi()
+G.printEulerChi()
+H.printEulerChi()
+U.printEulerChi()
+V.printEulerChi()
 # print(findMorphisms(F,U))

@@ -24,6 +24,6 @@ H.calcEulerChi()
 
 
 # Euler Characteristic
-F.printEulerCharacteristic()
-G.printEulerCharacteristic()
-H.printEulerCharacteristic()
+F.printEulerChi()
+G.printEulerChi()
+H.printEulerChi()

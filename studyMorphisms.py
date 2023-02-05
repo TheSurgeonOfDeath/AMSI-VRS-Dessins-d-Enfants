@@ -17,7 +17,7 @@ fb = [(1,6,2,5,3,4), (7,12,8,11,9,10)]
 fw = [(4,9,5,8,6,7), (10,3,11,2,12,1)]
 F = Dessin(fb, fw)
 F.calcEulerChi()
-F.printEulerCharacteristic()
+F.printEulerChi()
 
 # square
 gb = [(1,2), (3,4)]

@@ -23,7 +23,7 @@ for m in [2,3]:
 morphicsPerSrc = [tar for desTari in dessinsTar for tar in desTari if areMorphic(dessinSrc, tar)]
 print(len(morphicsPerSrc))
 
-dessinSrc.printEulerCharacteristic()
+dessinSrc.printEulerChi()
 [morphic.printEulerCharacteristic() for morphic in morphicsPerSrc]
 
 # G.printEulerCharacteristic()
