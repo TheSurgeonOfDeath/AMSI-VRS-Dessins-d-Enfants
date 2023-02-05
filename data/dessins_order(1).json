@@ -20,9 +20,20 @@
             }
         ],
         "nEdges": 1,
-        "Edges": [
-            1
-        ],
+        "Edges": {
+            "py/reduce": [
+                {
+                    "py/type": "builtins.range"
+                },
+                {
+                    "py/tuple": [
+                        1,
+                        2,
+                        1
+                    ]
+                }
+            ]
+        },
         "Faces": [
             [
                 {

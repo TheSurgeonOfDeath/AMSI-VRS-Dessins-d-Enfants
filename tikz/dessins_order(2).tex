@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+\begin{pgfonlayer}{nodelayer}
+\node [style=White] (2) at (0.0, 0.0) {};
+\node [style=Black] (0) at (1.0, 0.0) {};
+\node [style=Black] (1) at (-1.0, 0.0) {};
+\end{pgfonlayer}
+\begin{pgfonlayer}{edgelayer}
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (1) to (2));
+\end{pgfonlayer}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{pgfonlayer}{nodelayer}
+\node [style=Black] (0) at (0.0, 0.0) {};
+\node [style=White] (1) at (1.0, 0.0) {};
+\node [style=White] (2) at (-1.0, 0.0) {};
+\end{pgfonlayer}
+\begin{pgfonlayer}{edgelayer}
+\draw [in=(180.0, 1), out=(0, 1), looseness=0.75] (0) to (1));
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (2));
+\end{pgfonlayer}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{pgfonlayer}{nodelayer}
+\node [style=Black] (0) at (1.0, 0.0) {};
+\node [style=White] (1) at (-1.0, 0.0) {};
+\end{pgfonlayer}
+\begin{pgfonlayer}{edgelayer}
+\draw [in=(0, 1), out=(180.0, 1), looseness=0.75] (0) to (1));
+\draw [in=(340, 1), out=(160.0, 1), looseness=0.75] (0) to (1));
+\end{pgfonlayer}
+\end{tikzpicture}

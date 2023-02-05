@@ -1,11 +1,7 @@
 # Module for dessins
-
 import json
-from itertools import product
 from readableNestedList import readableNestedList
 from itertools import chain, combinations, permutations, combinations_with_replacement
-from sympy.combinatorics.named_groups import SymmetricGroup
-from sympy.combinatorics import Permutation, PermutationGroup
 import random
 from unique_permutations import unique_permutations
 import numpy as np
@@ -15,10 +11,28 @@ import utils
 
 dessinsTest = {}
 
+# This is for indexing for semiID. Should use a function to get them
+# but cannot be bother rn
 primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 
 def max_value(inputlist):
     return max(max(sublist) for sublist in inputlist)
+
+def array2cyclic(array_form):
+    # modified from: sympy.combinatorics.permutations cyclic_form()
+    unchecked = [True] * len(array_form)
+    cyclic_form = []
+    for i in range(len(array_form)):
+        if unchecked[i]:
+            cycle = [i + 1]
+            unchecked[i] = False
+            j = i
+            while unchecked[array_form[j] - 1]:
+                j = array_form[j] - 1
+                cycle.append(j + 1)
+                unchecked[j] = False
+            cyclic_form.append(tuple(cycle))
+    return cyclic_form
 
 def isMorphism(alpha, F, G):
     if F.nEdges % G.nEdges != 0:
@@ -59,18 +73,14 @@ def areIsomorphic(F, G):
     if F.nEdges != G.nEdges: #or len(F.b) != len(G.b) or len(F.w) != len(G.w):
         return False
 
-    #print(F.b, G.b, *zip(F.b, G.b))
-
-    #alphas = dict(zip(F.b[0], permutations(G.b[0])))
-    #print(alphas.items())
     alphas = permutations(F.Edges)
+
 
     for alpha in alphas:
         if isMorphism(alpha, F, G):
             return True
 
     return False
-
 
 def compute(i):
     global dessinsTest
@@ -93,24 +103,18 @@ def compute(i):
 
     return uniqueDessin
 
-def generate_dessins_new(n):
+def generate_dessins(n):
+    global dessinsTest
 
-    start = time.time()
-    G = SymmetricGroup(n)
-    Sn = list(G.generate(method = 'coset', af=False))
-
-    # write permutations in cyclic form, make cycles tuples and rightshift +1
-    SnCycles = [[tuple(e + 1 for e in cycle) for cycle in p.full_cyclic_form] for p in Sn]
+    SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
 
     # list of pairs of permutations (in cyclic form) in Sn
-    SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))
+    SnCyclesSquared = list(combinations(SnCycles, 2))
 
-    # Find all valid dessins
-    global dessinsTest
-    #dessinsUnchecked = {}
-    for i, pair in enumerate(SnCyclesSquared):
+    # Find potential dessin
+    for des in SnCyclesSquared:
 
-        des = Dessin(pair[0], pair[1])
+        des = Dessin(des[0], des[1])
         c = dessinsTest.get(des.semiID)
 
         if c is not None:
@@ -119,28 +123,21 @@ def generate_dessins_new(n):
         else:
             dessinsTest[des.semiID] = [des]
 
-    end = time.time()
-    print("PREPROCESSING", end - start)
-
-    with Pool(5) as p:
+    with Pool(50) as p:
         dessins = p.map(compute, dessinsTest.keys())
 
     return list(chain(*dessins))
 
-def generate_dessins_new_single(n):
-    G = SymmetricGroup(n)
-    Sn = list(G.generate(method = 'coset', af=False))
-
-    # write permutations in cyclic form, make cycles tuples and rightshift +1
-    SnCycles = [[tuple(e + 1 for e in cycle) for cycle in p.full_cyclic_form] for p in Sn]
+def generate_dessins_single(n):
+    SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
 
     # list of pairs of permutations (in cyclic form) in Sn
-    SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))
+    SnCyclesSquared = list(combinations(SnCycles, 2))
 
-    # Find all valid dessins
     dessins = {}
-    for i, pair in enumerate(SnCyclesSquared):
-        des = Dessin(pair[0], pair[1])
+    for des in SnCyclesSquared:
+
+        des = Dessin(des[0], des[1])
 
         if not des.isConnected():
             continue
@@ -157,31 +154,6 @@ def generate_dessins_new_single(n):
     return list(chain(*dessins.values()))
 
 
-def generate_dessins(n):
-    G = SymmetricGroup(n)
-    Sn = list(G.generate(method = 'coset', af=False))
-
-    # write permutations in cyclic form, make cycles tuples and rightshift +1
-    SnCycles = [[tuple(e + 1 for e in cycle) for cycle in p.full_cyclic_form] for p in Sn]
-
-    # list of pairs of permutations (in cyclic form) in Sn
-    SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))
-
-    # Find all valid dessins
-    dessins = []
-    for i, pair in enumerate(SnCyclesSquared):
-        #print([len(dessins), i, len(SnCyclesSquared)])
-        des = Dessin(pair[0], pair[1])
-        if des.isConnected() and not any(areIsomorphic(des, d) for d in dessins):
-            dessins.append(des)
-
-            # Check opposite colouring of des
-            des2 = Dessin(pair[1], pair[0])
-            if not areIsomorphic(des, des2):
-                dessins.append(des2)
-    return dessins
-
-
 # A function to generate a random permutation of arr[]
 def randomise(arr):
     # Start from the last element and swap one by one. We don't
@@ -195,7 +167,7 @@ def randomise(arr):
     return arr
 
 def randPerm(n):
-    return [tuple(e + 1 for e in cycle) for cycle in Permutation(randomise(list(range(n)))).full_cyclic_form]
+    return array2cyclic(randomise(list(range(n))))
 
 def randDessin(n):
     return Dessin(randPerm(n), randPerm(n))
@@ -244,8 +216,7 @@ class Dessin:
 
     def findFaces(self):
         faces = []
-        nEdges = max_value(self.b)
-        for e in range(1, nEdges + 1):
+        for e in range(1, self.nEdges + 1):
             for i in range(len(self.monoStr)):
                 face = []
                 f0 = (e, self.monoStr[i])
@@ -304,13 +275,13 @@ class Dessin:
         wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
         return all(x not in bSubsets for x in wSubsets)
 
-    def isConnected2(self):
+    #def isConnected2(self):
         # Checks if the underlying group is transitive
-        perm_zero_index = lambda perm : [tuple(e - 1 for e in cycle) for cycle in perm]
-        pfb = Permutation(perm_zero_index(self.b))
-        pfw = Permutation(perm_zero_index(self.w))
-        Fgrp = PermutationGroup(pfb, pfw)
-        return Fgrp.is_transitive()
+        #perm_zero_index = lambda perm : [tuple(e - 1 for e in cycle) for cycle in perm]
+        #pfb = Permutation(perm_zero_index(self.b))
+        #pfw = Permutation(perm_zero_index(self.w))
+        #Fgrp = PermutationGroup(pfb, pfw)
+        #return Fgrp.is_transitive()
 
     def permuteBlack(self, n):
         return self.br[n]
