@@ -16,6 +16,20 @@ primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 def max_value(inputlist):
     return max(max(sublist) for sublist in inputlist)
 
+def find_in_list_of_lists(mylist, elem):
+    # modified from: https://stackoverflow.com/questions/33938488/finding-the-index-of-an-element-in-nested-lists-in-python
+    for sublist in mylist:
+        if elem in sublist:
+            return (mylist.index(sublist), sublist.index(elem))
+    raise ValueError(f"{elem} is not in list")
+
+def permute(perm, n):
+    pos = find_in_list_of_lists(perm, n)
+    return perm[pos[0]][(pos[1] + 1) % len(perm[pos[0]])]
+
+def applyPermutation(perm, arr):
+    return [permute(perm, n) for n in arr]
+
 def array2cyclic(array_form):
     # modified from: sympy.combinatorics.permutations cyclic_form()
     unchecked = [True] * len(array_form)
