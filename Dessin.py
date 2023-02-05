@@ -1,13 +1,11 @@
 # Module for dessins
 import json
 from readableNestedList import readableNestedList
-from itertools import chain, combinations, permutations, combinations_with_replacement
+from itertools import chain, combinations, permutations
 import random
 from unique_permutations import unique_permutations
 import numpy as np
 from multiprocessing import Pool
-import time
-import utils
 
 dessinsTest = {}
 
@@ -97,13 +95,10 @@ def generate_dessins(n):
 
     # Find potential dessin
     for des in SnCyclesSquared:
-
         des = Dessin(des[0], des[1])
         c = dessinsTest.get(des.semiID)
-
         if c is not None:
             c.append(des)
-
         else:
             dessinsTest[des.semiID] = [des]
 
@@ -120,7 +115,6 @@ def generate_dessins_single(n):
 
     dessins = {}
     for des in SnCyclesSquared:
-
         des = Dessin(des[0], des[1])
 
         if not des.isConnected():
@@ -130,7 +124,6 @@ def generate_dessins_single(n):
 
         if c is None:
             dessins[des.semiID] = [des]
-
         elif not any(areIsomorphic(des, d) for d in c):
             c.append(des)
 
@@ -171,7 +164,6 @@ class Dessin:
             edges = self.symCycleEdges.get(len(i))
             if edges is None:
                 self.symCycleEdges[len(i)] = set(i)
-
             else:
                 edges.update(i)
 
