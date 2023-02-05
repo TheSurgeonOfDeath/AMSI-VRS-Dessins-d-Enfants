@@ -1,7 +1,7 @@
 # Module for dessins
 import json
 from readableNestedList import readableNestedList
-from itertools import chain, combinations, permutations, combinations_with_replacement
+from itertools import chain, combinations, permutations, combinations_with_replacement, product
 import random
 from unique_permutations import unique_permutations
 import numpy as np
@@ -11,7 +11,7 @@ dessinsTest = {}
 
 # This is for indexing for semiID. Should use a function to get them
 # but cannot be bother rn
-primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
 
 def max_value(inputlist):
     return max(max(sublist) for sublist in inputlist)
@@ -156,6 +156,25 @@ def generate_dessins_single(n):
             desOp = Dessin(pair[1], pair[0])
             addedDes(desOp) 
     return list(chain(*dessins.values()))
+
+def generate_all_dessins(n):
+    SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
+
+    # list of pairs of permutations (in cyclic form) in Sn
+    SnCyclesSquared = list(combinations(SnCycles, 2))
+
+    dessins = []
+    for i, pair in enumerate(SnCyclesSquared):
+        print([len(dessins), i, len(SnCyclesSquared)])
+        des = Dessin(pair[0], pair[1])
+        if des.isConnected():
+            dessins.append(des)
+            des.calcEulerChi()
+            if des.EulerChi < -4:
+                print(des.EulerChi)
+                return
+    return dessins
+
 
 
 # A function to generate a random permutation of arr[]
