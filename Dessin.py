@@ -1,7 +1,7 @@
 # Module for dessins
 import json
 from readableNestedList import readableNestedList
-from itertools import chain, combinations, permutations
+from itertools import chain, combinations, permutations, combinations_with_replacement
 import random
 from unique_permutations import unique_permutations
 import numpy as np
@@ -91,7 +91,7 @@ def generate_dessins(n):
     SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
 
     # list of pairs of permutations (in cyclic form) in Sn
-    SnCyclesSquared = list(combinations(SnCycles, 2))
+    SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))
 
     # Find potential dessin
     for des in SnCyclesSquared:
@@ -114,8 +114,13 @@ def generate_dessins_single(n):
     SnCyclesSquared = list(combinations(SnCycles, 2))
 
     dessins = {}
-    for des in SnCyclesSquared:
-        des = Dessin(des[0], des[1])
+
+    # symmetric dessin - repeated combination
+    permOfSymDes = [tuple(range(1, n+1))]
+    symDes = Dessin(permOfSymDes, permOfSymDes)
+    dessins[symDes.semiID] = [symDes]
+    for pair in SnCyclesSquared:
+        des = Dessin(pair[0], pair[1])
 
         if not des.isConnected():
             continue
@@ -124,9 +129,13 @@ def generate_dessins_single(n):
 
         if c is None:
             dessins[des.semiID] = [des]
+
+            # Check opposite colouring of des
+            desOp = Dessin(pair[1], pair[0])
+            if not areIsomorphic(des, desOp):
+                dessins[desOp.semiID] = [desOp]
         elif not any(areIsomorphic(des, d) for d in c):
             c.append(des)
-
     return list(chain(*dessins.values()))
 
 

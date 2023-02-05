@@ -11,6 +11,19 @@
         "w": {
             "py/id": 2
         },
+        "br": {
+            "1": 1
+        },
+        "wr": {
+            "1": 1
+        },
+        "symCycleEdges": {
+            "1": {
+                "py/set": [
+                    1
+                ]
+            }
+        },
         "mono": [
             {
                 "py/id": 2
@@ -19,6 +32,67 @@
                 "py/id": 2
             }
         ],
+        "semiID": {
+            "py/tuple": [
+                {
+                    "py/reduce": [
+                        {
+                            "py/function": "numpy.core.multiarray.scalar"
+                        },
+                        {
+                            "py/tuple": [
+                                {
+                                    "py/reduce": [
+                                        {
+                                            "py/type": "numpy.dtype"
+                                        },
+                                        {
+                                            "py/tuple": [
+                                                "i8",
+                                                false,
+                                                true
+                                            ]
+                                        },
+                                        {
+                                            "py/tuple": [
+                                                3,
+                                                "<",
+                                                null,
+                                                null,
+                                                null,
+                                                -1,
+                                                -1,
+                                                0
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "py/b64": "AwAAAAAAAAA="
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "py/reduce": [
+                        {
+                            "py/function": "numpy.core.multiarray.scalar"
+                        },
+                        {
+                            "py/tuple": [
+                                {
+                                    "py/id": 8
+                                },
+                                {
+                                    "py/b64": "AwAAAAAAAAA="
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
         "nEdges": 1,
         "Edges": {
             "py/reduce": [
