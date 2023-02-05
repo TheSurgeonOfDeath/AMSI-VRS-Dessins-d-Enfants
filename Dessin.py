@@ -113,29 +113,30 @@ def generate_dessins_single(n):
     # list of pairs of permutations (in cyclic form) in Sn
     SnCyclesSquared = list(combinations(SnCycles, 2))
 
-    dessins = {}
-
     # symmetric dessin - repeated combination
     permOfSymDes = [tuple(range(1, n+1))]
     symDes = Dessin(permOfSymDes, permOfSymDes)
-    dessins[symDes.semiID] = [symDes]
+    
+    # generate unique dessins
+    dessins = {symDes.semiID: [symDes]}
     for pair in SnCyclesSquared:
         des = Dessin(pair[0], pair[1])
 
         if not des.isConnected():
             continue
 
-        c = dessins.get(des.semiID)
+        dessinsWithSameSemiID = dessins.get(des.semiID)
 
-        if c is None:
+        if dessinsWithSameSemiID is None:
             dessins[des.semiID] = [des]
 
             # Check opposite colouring of des
             desOp = Dessin(pair[1], pair[0])
             if not areIsomorphic(des, desOp):
                 dessins[desOp.semiID] = [desOp]
-        elif not any(areIsomorphic(des, d) for d in c):
-            c.append(des)
+        elif not any(areIsomorphic(des, d) for d in dessinsWithSameSemiID):
+            dessinsWithSameSemiID.append(des)
+            
     return list(chain(*dessins.values()))
 
 
