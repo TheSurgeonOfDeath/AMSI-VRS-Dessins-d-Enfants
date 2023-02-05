@@ -1,10 +1,10 @@
 from Dessin import Dessin, applyPermutation, array2cyclic
-from itertools import permutations, combinations_with_replacement, groupby
+from itertools import permutations, combinations_with_replacement, combinations, groupby
 from readableNestedList import readableNestedList
 import time
 import jsonpickle
 
-n = 4
+n = 3
 noniso_perm_pairs = []
 
 b = [tuple(range(1,n+1))]
@@ -15,9 +15,14 @@ w = b
 #     for 
 
 perms = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
-# permsSquared = list(combinations_with_replacement(perms, 2))
+permsSquared = list(combinations(perms, 2))
 print(readableNestedList(perms))
-# print(readableNestedList(permsSquared))
+perms.sort(key=len)
+permsSquared2 = list(combinations(perms, 2))
+print(readableNestedList(perms))
+print(readableNestedList(permsSquared))
+print(readableNestedList(permsSquared2))
+print(len(permsSquared))
 
 # with open(f"data/dessins_order({n}).json", 'r') as f:
 #     dessins = jsonpickle.decode(f.read())
@@ -32,6 +37,6 @@ print(readableNestedList(perms))
 # print(readableNestedList(unique_dessins_mono_indices))
 
 nonIsoPermPairs = []
-i_indices = range(len(perms))
-for i in i_indices:
-    nonIsoPermPairs.append((perms[i], perms[i]))
+for i in range(len(perms)):
+    for j in range(i, len(perms)):
+        nonIsoPermPairs.append((perms[i], perms[j]))
