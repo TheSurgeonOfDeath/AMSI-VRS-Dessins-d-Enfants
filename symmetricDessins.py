@@ -5,25 +5,34 @@ def symDes(n):
     perm = [tuple(range(1, n + 1))]
     return Dessin(perm, perm)
 
-# 6
-F = symDes(6)
-G = symDes(3)
-H = symDes(2)
+
+chis = list(range(1,20))
+for i in range(1,20):
+    des = symDes(i)
+    des.calcEulerChi()
+    chis[i-1] = des.EulerChi
+print(chis)
 
 
-# calculate Euler characteristics
-F.calcEulerChi()
-G.calcEulerChi()
-H.calcEulerChi()
+# # 6
+# F = symDes(6)
+# G = symDes(3)
+# H = symDes(2)
 
 
-# morphisms
-# morphisms = findMorphisms(F, G)
-# print(f"Mophisms: {readableNestedList(morphisms)}")
-# alpha = morphisms[1]
+# # calculate Euler characteristics
+# F.calcEulerChi()
+# G.calcEulerChi()
+# H.calcEulerChi()
 
 
-# Euler Characteristic
-F.printEulerChi()
-G.printEulerChi()
-H.printEulerChi()
+# # morphisms
+# # morphisms = findMorphisms(F, G)
+# # print(f"Mophisms: {readableNestedList(morphisms)}")
+# # alpha = morphisms[1]
+
+
+# # Euler Characteristic
+# F.printEulerChi()
+# G.printEulerChi()
+# H.printEulerChi()
