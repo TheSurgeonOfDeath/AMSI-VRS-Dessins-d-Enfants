@@ -119,24 +119,28 @@ def generate_dessins_single(n):
     
     # generate unique dessins
     dessins = {symDes.semiID: [symDes]}
-    for pair in SnCyclesSquared:
-        des = Dessin(pair[0], pair[1])
 
-        if not des.isConnected():
-            continue
-
+    # adds unique dessins to dict dessins
+    def addedDes(des):
         dessinsWithSameSemiID = dessins.get(des.semiID)
-
         if dessinsWithSameSemiID is None:
             dessins[des.semiID] = [des]
-
-            # Check opposite colouring of des
-            desOp = Dessin(pair[1], pair[0])
-            if not areIsomorphic(des, desOp):
-                dessins[desOp.semiID] = [desOp]
+            return True
         elif not any(areIsomorphic(des, d) for d in dessinsWithSameSemiID):
             dessinsWithSameSemiID.append(des)
-            
+            return True
+        return False
+
+    for pair in SnCyclesSquared:
+        des = Dessin(pair[0], pair[1])
+        if not des.isConnected():
+            continue
+        
+        # add des if unique
+        if addedDes(des):
+            # Check opposite colouring of des
+            desOp = Dessin(pair[1], pair[0])
+            addedDes(desOp) 
     return list(chain(*dessins.values()))
 
 
