@@ -8,10 +8,10 @@ class angleRegion():
     def __init__(self, lowerBound, upperBound):
         self.lowerBound = lowerBound % 360
         self.upperBound = upperBound % 360
-    
+
     def __str__(self):
         return f"({self.lowerBound}, {self.upperBound})"
-    
+
     def __repr__(self):
         return f"({self.lowerBound}, {self.upperBound})"
 
@@ -39,7 +39,7 @@ class angleRegion():
         else:
             lowerDiff = min(abs(360 - self.lowerBound - val), abs(val - self.lowerBound))
             upperDiff = min(abs(360 - self.upperBound - val), abs(val - self.upperBound))
-    
+
             return self.lowerBound if lowerDiff < upperDiff else self.upperBound
 
     def getClosestOutsideRange(self, val):
@@ -50,12 +50,18 @@ class angleRegion():
         else:
             lowerDiff = min(abs(360 - self.lowerBound - val), abs(val - self.lowerBound))
             upperDiff = min(abs(360 - self.upperBound - val), abs(val - self.upperBound))
-    
+
             return self.lowerBound if lowerDiff < upperDiff else self.upperBound
 
 
 class TwoWayDict:
     def __init__(self, right=[], left=[]):
+
+        if type(right) is Dict and type(left) is Dict:
+            self.dictTo = right
+            self.dictFrom = left
+            return
+
         self.dictTo = {i:j for  i, j in zip(right, left)}
         self.dictFrom = {j:i for  i, j in zip(right, left)}
 
