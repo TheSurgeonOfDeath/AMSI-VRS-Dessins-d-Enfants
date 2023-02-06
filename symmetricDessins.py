@@ -6,8 +6,9 @@ def symDes(n):
     return Dessin(perm, perm)
 
 
-chis = list(range(1,20))
-for i in range(1,20):
+max_n = 20
+chis = list(range(1,max_n + 1))
+for i in range(1,max_n + 1):
     des = symDes(i)
     des.calcEulerChi()
     chis[i-1] = des.EulerChi
