@@ -252,10 +252,7 @@ class Dessin:
                 while fNew != f0:
                     it += 1
                     face.append(fNew)
-                    if self.monoStr[dNewIdx] == 'b':
-                        eNew = self.permuteBlack(eNew)
-                    else:
-                        eNew = self.permuteWhite(eNew)
+                    eNew = self.permuteBlack(eNew) if self.monoStr[dNewIdx] == 'b' else self.permuteWhite(eNew)
                     dNewIdx = i - 1 - it % 2
                     fNew = (eNew, self.monoStr[dNewIdx])
                 faces.append(face)
