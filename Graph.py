@@ -161,6 +161,7 @@ class Graph:
 
             else:
                 for edge, data in angleSpace.items():
+                    # ANGLE OUT NOT CALCULATED PROPERLY!!!
                     self.edges[edge]["angleOut"] = data[0]
         return
 
