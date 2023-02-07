@@ -15,11 +15,7 @@ class Graph:
 
     def index(self, node):
         # If a perm ID is passed
-        if type(node) is int:
-            return self.nodeIndex[node]
-
-        # If the perm is passed
-        return self.nodeIndex[id(node)]
+        return self.nodeIndex[node] if type(node) is int else self.nodeIndex[id(node)]
 
 
     def findNodeWithEdge(self, nodes, edge):
@@ -44,9 +40,9 @@ class Graph:
         # Generate a list of edges to each node
         blackConnections = self.genImmediateConnectedNodes(self.dessin.black, self.dessin.white)
         whiteConnections = self.genImmediateConnectedNodes(self.dessin.white, self.dessin.black)
-        
+
         connections = {x[0]:x[1] for x in chain(*zip_longest(blackConnections.items(), whiteConnections.items())) if x is not None}
-        
+
         sortedConnections = sorted(connections.items(), key=lambda item: len(item[1]), reverse=True)
 
         # Getting all nodes of highest connected edges
@@ -65,7 +61,7 @@ class Graph:
         r0 = 0 if len(initialNodes) == 1 else 1
 
         nodeCoords = {node[0]:arg(r0, i, angle, self.colour(node[0])) for i, node in enumerate(initialNodes)}
-    
+
         # Recursively placing other nodes
         while len(nodeCoords) < self.nBlack + self.nWhite:
             for node in list(nodeCoords.keys()):
@@ -78,7 +74,17 @@ class Graph:
                 offset = nodeCoords[node]["pos"]
                 angleOffset = nodeCoords[node]["offset"]
 
-                nodeCoords.update({n:arg(1, i, angle, self.colour(n), offset=offset, angleOffset=angleOffset) for i, n in enumerate(remainingConnectionsToNode)})
+                nodeCoords |= {
+                    n: arg(
+                        1,
+                        i,
+                        angle,
+                        self.colour(n),
+                        offset=offset,
+                        angleOffset=angleOffset,
+                    )
+                    for i, n in enumerate(remainingConnectionsToNode)
+                }
 
         self.nodeCoords = nodeCoords
 
@@ -88,15 +94,20 @@ class Graph:
         # I think this can be integrated more with some of the stuff above as it's very similar
         blackConnections = {self.index(node): [(edge, self.findNodeWithEdge(self.dessin.white, edge)) for edge in node] for node in self.dessin.black}
         whiteConnections = {self.index(node): [(edge, self.findNodeWithEdge(self.dessin.black, edge)) for edge in node] for node in self.dessin.white}
-        connections = {i:j for i, j in list(blackConnections.items()) + list(whiteConnections.items())}
+        connections = dict(
+            list(blackConnections.items()) + list(whiteConnections.items())
+        )
 
         connectionDisplacements = {i:[(e, n, nodeCoords[i]["pos"] - nodeCoords[n]["pos"]) for e, n in j] for i, j in connections.items()}
         connectionDisplacementsNorm = {i:[(e, n, p / np.linalg.norm(p)) for e, n, p in j] for i, j in connectionDisplacements.items()}
-        meanAngle = {i:np.arctan2(sum([n[1] for _, _, n in j]), sum([n[0] for _, _, n in j])) for i, j in connectionDisplacementsNorm.items()}
+        meanAngle = {
+            i: np.arctan2(sum(n[1] for _, _, n in j), sum(n[0] for _, _, n in j))
+            for i, j in connectionDisplacementsNorm.items()
+        }
         connectionRankings = {i:sorted(j, key=lambda x: abs(meanAngle[i] - np.arctan2(x[2][1] + np.cos(meanAngle[i]), x[2][0] + np.cos(meanAngle[i])))) for i, j in connectionDisplacementsNorm.items()}
 
         # Placing edges in ranking order, decreasing freedom
-        minAngle = 20 
+        minAngle = 20
         self.edges = {}
 
         for node in self.dessin.black + self.dessin.white:
@@ -109,13 +120,13 @@ class Graph:
 
             for e, n, (dx, dy) in connectionRankings[index]:
                 desiredAngle = (np.arctan2(dy, dx) * 360 / (2 * np.pi)) % 360
-                
+
                 entry = angleSpace[e]
                 entry.append(n)
-                
+
                 angle = round(entry[1].getClosestWithinRange(desiredAngle), 1)
                 entry[0] = angle, 1
-                
+
                 for i in range(1, len(node)):
                     entry = angleSpace[node[(node.index(e) + i) % len(node)]]
                     #if entry[0] is not None:
@@ -131,7 +142,7 @@ class Graph:
                     entry = angleSpace[node[(node.index(e) - i) % len(node)]]
                     #if entry[0] is not None:
                     #    break
-                    
+
                     #test = utils.angleRegion(entry[1].upperBound, angle - minAngle * i)
                     #if test.withinRange(entry[1].lowerBound):
                     #    entry[1].lowerBound = angle - minAngle * i
@@ -141,33 +152,29 @@ class Graph:
                     #    entry[1].lowerBound = angle - minAngle * i
 
                     entry[1].shrinkLowerBound(angle + i * minAngle)
-                
+
             if index < self.nBlack:
-                self.edges.update({edge:{"to": data[2], "from": data[3], "angleIn": data[0]} for edge, data in angleSpace.items()})
+                self.edges |= {
+                    edge: {"to": data[2], "from": data[3], "angleIn": data[0]}
+                    for edge, data in angleSpace.items()
+                }
 
             else:
                 for edge, data in angleSpace.items():
                     self.edges[edge]["angleOut"] = data[0]
-
         return
 
     def latex(self):
-
-        latex = ""
-        latex += "\\begin{tikzpicture}\n"
-        latex += "\\begin{pgfonlayer}{nodelayer}\n"
-
+        latex = "\\begin{tikzpicture}\n" + "\\begin{pgfonlayer}{nodelayer}\n"
         for i, data in self.nodeCoords.items():
             latex += f"\\node [style={'White' if data['colour'] else 'Black'}] ({i}) at {tuple(data['pos'])} {{}};\n"
 
         latex += "\\end{pgfonlayer}\n"
-
         latex += "\\begin{pgfonlayer}{edgelayer}\n"
 
         for data in self.edges.values():
-            latex += f"\\draw [in={data['angleIn']}, out={data['angleOut']}, looseness=0.75] ({data['to']}) to ({data['from']}));\n"
+            latex += f"\\draw [in={data['angleIn'][0]}, out={data['angleOut'][0]}, looseness=0.75] ({data['to']}) to ({data['from']}) {{}};\n"
 
         latex += "\\end{pgfonlayer}\n"
         latex += "\\end{tikzpicture}\n"
-
         return latex
