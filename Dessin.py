@@ -224,7 +224,7 @@ class Dessin:
 
         #{i:j for i, j in enumerate(b)}
         self.mono = [b, w]
-        self.semiID = (np.prod([primes[len(i)] for i in b]), np.prod([primes[len(i)] for i in w]))
+        self.semiID = (int(np.prod([primes[len(i)] for i in b])), int(np.prod([primes[len(i)] for i in w])))
 
         # Euler characteristic
         # self.Faces = self.findFaces()
