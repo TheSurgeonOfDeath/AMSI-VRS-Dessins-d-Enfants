@@ -33,36 +33,32 @@ class angleRegion():
     def getClosestWithinRange(self, val):
         val = val % 360
 
-        if self.withinRange(val):
-            return val
-
-        else:
-            lowerDiff = min(abs(360 - self.lowerBound - val), abs(val - self.lowerBound))
-            upperDiff = min(abs(360 - self.upperBound - val), abs(val - self.upperBound))
-
-            return self.lowerBound if lowerDiff < upperDiff else self.upperBound
+        return val if self.withinRange(val) else self.calcDiffs(val)
 
     def getClosestOutsideRange(self, val):
         val = val % 360
-        if not self.withinRange(val):
-            return val
+        return self.calcDiffs(val) if self.withinRange(val) else val
 
-        else:
-            lowerDiff = min(abs(360 - self.lowerBound - val), abs(val - self.lowerBound))
-            upperDiff = min(abs(360 - self.upperBound - val), abs(val - self.upperBound))
-
-            return self.lowerBound if lowerDiff < upperDiff else self.upperBound
+    # TODO Rename this here and in `getClosestWithinRange` and `getClosestOutsideRange`
+    def calcDiffs(self, val):
+        lowerDiff = min(abs(360 - self.lowerBound - val), abs(val - self.lowerBound))
+        upperDiff = min(abs(360 - self.upperBound - val), abs(val - self.upperBound))
+        return self.lowerBound if lowerDiff < upperDiff else self.upperBound
 
 
 class TwoWayDict:
-    def __init__(self, right=[], left=[]):
+    def __init__(self, right=None, left=None):
 
-        if type(right) is Dict and type(left) is Dict:
+        if right is None:
+            right = []
+        if left is None:
+            left = []
+        if type(right) is dict and type(left) is dict:
             self.dictTo = right
             self.dictFrom = left
             return
 
-        self.dictTo = {i:j for  i, j in zip(right, left)}
+        self.dictTo = dict(zip(right, left))
         self.dictFrom = {j:i for  i, j in zip(right, left)}
 
     def insert(self, i, j):
