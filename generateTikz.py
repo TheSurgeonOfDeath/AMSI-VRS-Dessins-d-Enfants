@@ -1,5 +1,5 @@
 #from Dessin import Dessin
-from Morphism import * 
+from Morphism import *
 from Graph import Graph
 
 from LDessin import Dessin as Des
@@ -29,14 +29,14 @@ import jsonpickle
 #             f.write(g.latex())
 #         # f.write(endDoc)
 
-with open("data/dessins_order(7).json", 'r') as f:
+with open("data/dessins_order(5).json", 'r') as f:
     dessins = jsonpickle.decode(f.read())
 
 
 # normalise to (1 2 3 4 5 6 7)
-complexDessins = [des for des in dessins if des.EulerChi == -4]
-for des in complexDessins:
-    print([applyPermutation([(1,), (7,2,6), (5,4,3)], *d) for d in des.mono])
+complexDessins = [des for des in dessins if des.EulerChi == -2]
+# for des in complexDessins:
+#     print([applyPermutation([(1,), (7,2,6), (5,4,3)], *d) for d in des.mono])
 
 # [(1, 7, 4, 5, 3, 2, 6)]
 # [(6, 2, 3, 5, 4, 7, 1)]
@@ -44,7 +44,12 @@ for des in complexDessins:
 complexDes = [Des(des.b, des.w) for des in complexDessins]
 graphs = [Graph(des) for des in complexDes]
 
-with open("tikz/dessins_order(7)_chi=-4.tex", 'w') as f:
-    for g in graphs:
+with open("tikz/dessins_order(5)_chi=-2.tex", 'w') as f:
+    for i, g in enumerate(graphs):
         g.plot()
+        f.write(f"%{str(complexDessins[i].mono)}\n")
         f.write(g.latex() + "\n\n")
+
+g = Graph(Des([(1,2,3,4,5)], [(1,2,3,4,5)]))
+g.plot()
+print(g.latex())
