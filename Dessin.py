@@ -6,6 +6,8 @@ import random
 from unique_permutations import unique_permutations
 import numpy as np
 from multiprocessing import Pool
+import networkx as nx
+from sympy.utilities.iterables import multiset_permutations
 
 dessinsTest = {}
 
@@ -32,6 +34,7 @@ def applyPermutation(perm, arr):
 
 def array2cyclic(array_form):
     # modified from: sympy.combinatorics.permutations cyclic_form()
+    # permutations 1-indexed
     unchecked = [True] * len(array_form)
     cyclic_form = []
     for i in range(len(array_form)):
@@ -81,51 +84,162 @@ def powerset(iterable):
     s = list(iterable)
     return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 
+
+def dessin_to_networkx(d):
+    G = nx.Graph()
+    for v in d.b:
+        for i in range(len(v)):
+            G.add_edge(f"b{v[i]}", f"e{v[(i+1)%len(v)]}")
+    for w in d.w:
+        for i in range(len(w)):
+            G.add_edge(f"w{w[i]}", f"e{w[(i+1)%len(w)]}")
+    return G
+
 def areIsomorphic(F, G):
     if F.nEdges != G.nEdges: #or len(F.b) != len(G.b) or len(F.w) != len(G.w):
         return False
+    
+    # def len_items(list_of_lists):
+    #     return [len(list) for list in list_of_lists]
+    
+    # if len_items(F.b) != len_items(G.b) or len_items(F.w) != len_items(G.w):
+    #     return False
+    # FG = dessin_to_networkx(F)
+    # GG = dessin_to_networkx(G)
+    # GM = nx.isomorphism.GraphMatcher(FG, GG)
+    # if not GM.is_isomorphic():
+    #     return False
+    
     alphas = permutations(F.Edges)
     return any(isMorphism(alpha, F, G) for alpha in alphas)
 
-def compute(i):
-    global dessinsTest
-    d = dessinsTest[i]
-    uniqueDessins = []
-    for dessin in d:
-        if not dessin.isConnected():
-            continue
-        iso = any(areIsomorphic(dessin, unique) for unique in uniqueDessins)
-        if not iso:
-            uniqueDessins.append(dessin)
-    return uniqueDessins
+# def compute(i):
+#     global dessinsTest
+#     d = dessinsTest[i]
+#     uniqueDessins = []
+#     for dessin in d:
+#         if not dessin.isConnected():
+#             continue
+#         iso = any(areIsomorphic(dessin, unique) for unique in uniqueDessins)
+#         if not iso:
+#             uniqueDessins.append(dessin)
+#     return uniqueDessins
 
-def generate_dessins(n):
-    global dessinsTest
+# def generate_dessins(n):
+#     global dessinsTest
 
+#     SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
+
+#     # list of pairs of permutations (in cyclic form) in Sn
+#     SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))
+
+#     # Find potential dessin
+#     for des in SnCyclesSquared:
+#         des = Dessin(des[0], des[1])
+#         c = dessinsTest.get(des.semiID)
+#         if c is not None:
+#             c.append(des)
+#         else:
+#             dessinsTest[des.semiID] = [des]
+
+#     with Pool(50) as p:
+#         dessins = p.map(compute, dessinsTest.keys())
+
+#     return list(chain(*dessins))
+
+from multiprocessing import Pool, cpu_count
+
+def _process_pair_for_dessin(pair):
+    # This must be at module level for pickling!
+    results = []
+    des = Dessin(pair[0], pair[1])
+    if not des.isConnected():
+        return results
+    hashDessin(des, results)
+    # Check opposite colouring
+    desOp = Dessin(pair[1], pair[0])
+    hashDessin(desOp, results)
+    return results
+
+def hashDessin(arg0, results):
+    h = hash((tuple(map(tuple, arg0.b)), tuple(map(tuple, arg0.w))))
+    semiID = arg0.semiID
+    results.append((semiID, h, arg0))
+
+def generate_dessins_single3(n):
+    """
+    Generates all unique, connected dessins of size n, using a hash of a canonical tuple
+    representation for fast uniqueness checks before isomorphism testing.
+    This version parallelizes the outer loop using multiprocessing.
+    """
     SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
+    SnCyclesSquared = combinations(SnCycles, 2)
+    permOfSymDes = [tuple(range(1, n+1))]
+    symDes = Dessin(permOfSymDes, permOfSymDes)
+    dessins = {symDes.semiID: [symDes]}
+    dessin_hashes = {symDes.semiID: {hash((tuple(map(tuple, symDes.b)), tuple(map(tuple, symDes.w))))}}
 
-    # list of pairs of permutations (in cyclic form) in Sn
-    SnCyclesSquared = list(combinations_with_replacement(SnCycles, 2))
+    with Pool(processes=cpu_count()) as pool:
+        all_results = pool.map(_process_pair_for_dessin, SnCyclesSquared)
 
-    # Find potential dessin
-    for des in SnCyclesSquared:
-        des = Dessin(des[0], des[1])
-        c = dessinsTest.get(des.semiID)
-        if c is not None:
-            c.append(des)
-        else:
-            dessinsTest[des.semiID] = [des]
+    # Flatten results and filter for uniqueness
+    for result_list in all_results:
+        for semiID, h, des in result_list:
+            dessinsWithSameSemiID = dessins.get(semiID)
+            hashes = dessin_hashes.get(semiID, set())
+            if dessinsWithSameSemiID is None:
+                dessins[semiID] = [des]
+                dessin_hashes[semiID] = {h}
+            elif h not in hashes and not any(areIsomorphic(des, d) for d in dessinsWithSameSemiID):
+                dessinsWithSameSemiID.append(des)
+                hashes.add(h)
+                dessin_hashes[semiID] = hashes
 
-    with Pool(50) as p:
-        dessins = p.map(compute, dessinsTest.keys())
+    return list(chain(*dessins.values()))
 
-    return list(chain(*dessins))
+def generate_dessins_single2(n):
+    """
+    Generates all unique, connected dessins of size n, using a hash of a canonical tuple
+    representation for fast uniqueness checks before isomorphism testing.
+    """
+    SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
+    SnCyclesSquared = combinations(SnCycles, 2)
+    permOfSymDes = [tuple(range(1, n+1))]
+    symDes = Dessin(permOfSymDes, permOfSymDes)
+    dessins = {symDes.semiID: [symDes]}
+    dessin_hashes = {symDes.semiID: {hash((tuple(map(tuple, symDes.b)), tuple(map(tuple, symDes.w))))}}
+
+    def addedDes(des):
+        # Use a tuple of tuples for a fast, hashable, canonical representation
+        h = hash((tuple(map(tuple, des.b)), tuple(map(tuple, des.w))))
+        dessinsWithSameSemiID = dessins.get(des.semiID)
+        hashes = dessin_hashes.get(des.semiID, set())
+        if dessinsWithSameSemiID is None:
+            dessins[des.semiID] = [des]
+            dessin_hashes[des.semiID] = {h}
+            return True
+        elif h not in hashes and not any(areIsomorphic(des, d) for d in dessinsWithSameSemiID):
+            dessinsWithSameSemiID.append(des)
+            hashes.add(h)
+            dessin_hashes[des.semiID] = hashes
+            return True
+        return False
+
+    for pair in SnCyclesSquared:
+        des = Dessin(pair[0], pair[1])
+        if not des.isConnected():
+            continue
+        if addedDes(des):
+            desOp = Dessin(pair[1], pair[0])
+            addedDes(desOp)
+    return list(chain(*dessins.values()))
+
 
 def generate_dessins_single(n):
     SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n+1))]
 
     # list of pairs of permutations (in cyclic form) in Sn
-    SnCyclesSquared = list(combinations(SnCycles, 2))
+    SnCyclesSquared = combinations(SnCycles, 2)
 
     # symmetric dessin - repeated combination
     permOfSymDes = [tuple(range(1, n+1))]
@@ -224,7 +338,8 @@ class Dessin:
 
         #{i:j for i, j in enumerate(b)}
         self.mono = [b, w]
-        self.semiID = (int(np.prod([primes[len(i)] for i in b])), int(np.prod([primes[len(i)] for i in w])))
+        # self.semiID = (int(np.prod([primes[len(i)] for i in b])), int(np.prod([primes[len(i)] for i in w])))
+        self.semiID = (tuple(sorted(len(i) for i in b)), tuple(sorted(len(i) for i in w)))
 
         # Euler characteristic
         # self.Faces = self.findFaces()
@@ -273,7 +388,7 @@ class Dessin:
 
     def printEulerChi(self):
         if not hasattr(self, 'EulerChi'):
-            self.calcEulerChi
+            self.calcEulerChi()
         print(f"Faces: {readableNestedList(self.Faces)}")
         print(f"Initial edges: {self.initFaces}")
         print(f"No. faces: {self.nFaces}")
@@ -281,15 +396,43 @@ class Dessin:
         print(f"No. vertices: {self.nVertices}")
         print(f"Euler Characteristic: {self.EulerChi}")
 
+    # def isConnected(self):
+    #     # For a proper subset B of cycles of b, let S be the edge set of B and
+    #     # for a proper subset W of cycles of w, let T be the edge set of W.
+    #     # If any S = T, the dessin is disconnected. If all S \neq T, it is connected.
+    #     bPowerSet = list(powerset(self.b))[1:-1]
+    #     wPowerSet = list(powerset(self.w))[1:-1]
+    #     bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
+    #     wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
+    #     return all(x not in bSubsets for x in wSubsets)
+    
     def isConnected(self):
-        # For a proper subset B of cycles of b, let S be the edge set of B and
-        # for a proper subset W of cycles of w, let T be the edge set of W.
-        # If any S = T, the dessin is disconnected. If all S \neq T, it is connected.
-        bPowerSet = list(powerset(self.b))[1:-1]
-        wPowerSet = list(powerset(self.w))[1:-1]
-        bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
-        wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
-        return all(x not in bSubsets for x in wSubsets)
+        """Check if the dessin is connected using BFS traversal."""
+        # Build adjacency: each edge is a node, connect via black and white cycles
+
+        from collections import deque
+        queue = deque([0])
+        visited = {0}
+        # Build adjacency for each edge
+        adj = [[] for _ in range(self.nEdges)]
+        for cycle in self.b:
+            for i in range(len(cycle)):
+                a, b = cycle[i], cycle[(i+1)%len(cycle)]
+                adj[a-1].append(b-1)
+                adj[b-1].append(a-1)
+        for cycle in self.w:
+            for i in range(len(cycle)):
+                a, b = cycle[i], cycle[(i+1)%len(cycle)]
+                adj[a-1].append(b-1)
+                adj[b-1].append(a-1)
+        # BFS
+        while queue:
+            node = queue.popleft()
+            for neighbor in adj[node]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append(neighbor)
+        return len(visited) == self.nEdges
 
     def permuteBlack(self, n):
         return self.br[n]

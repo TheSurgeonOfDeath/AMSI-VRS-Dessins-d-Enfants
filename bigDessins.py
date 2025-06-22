@@ -1,4 +1,4 @@
-from Dessin import generate_dessins, generate_dessins_single
+from Dessin import generate_dessins_single, generate_dessins_single2, generate_dessins_single3
 import time
 import jsonpickle
 
@@ -15,7 +15,7 @@ import jsonpickle
 # print(score2)
 
 # order
-n = 3
+n = 5
 
 # Generate dessins
 tic = time.perf_counter()
@@ -25,6 +25,23 @@ for des in dessins:
     des.calcEulerChi()
 toc = time.perf_counter()
 print(f"Generating time: {toc - tic:0.4f} seconds")
+
+tic = time.perf_counter()
+dessins = generate_dessins_single2(n)
+print(len(dessins))
+for des in dessins:
+    des.calcEulerChi()
+toc = time.perf_counter()
+print(f"Generating time: {toc - tic:0.4f} seconds")
+
+tic = time.perf_counter()
+dessins = generate_dessins_single3(n)
+print(len(dessins))
+for des in dessins:
+    des.calcEulerChi()
+toc = time.perf_counter()
+print(f"Generating time: {toc - tic:0.4f} seconds")
+
 
 
 # write dessin to file
