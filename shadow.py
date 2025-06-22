@@ -25,3 +25,4 @@ F.isConnected()
 
 F.printEulerChi()
 hasattr(F, 'EulerChi')
+
