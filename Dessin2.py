@@ -3,6 +3,8 @@
 from itertools import product
 from readableNestedList import readableNestedList
 from itertools import chain, combinations
+
+# Note: Permutations are applied left to right by SymPy as opposed to traditional mathematics
 from sympy.combinatorics import Permutation
 
 def max_value(inputlist):
@@ -36,18 +38,9 @@ class Dessin:
         # permutations
         self.b = b
         self.w = w
+        self.wb = b * w
         self.mono = [b, w]
         self.monoStr = ['b', 'w']
-        
-        # Euler characteristic
-        self.Faces = self.findFaces()
-        self.initFaces = self.faces2init()
-        self.nFaces = len(self.Faces)
-        self.nEdges = max_value(self.b + 1)
-        self.Edges = range(self.nEdges)
-        self.Vertices = self.b + self.w
-        self.nVertices = len(self.b) + len(self.w)
-        self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
     def perm2str(self, perm):
         return self.monoStr[self.mono.index(perm)];
@@ -73,36 +66,68 @@ class Dessin:
                     dNew = self.mono[self.mono.index(dNew) - 1]
                     fNew = (eNew, self.perm2str(dNew))
                 faces.append(face)
-        return(faces)
+                
+                # add faces property
+                self.Faces = self.findFaces()
+                self.initFaces = self.faces2init()
+        # return(faces)
         
 
     def faces2init(self):
         return [f[0] for f in self.Faces]
 
-    # def calcEulerChi(self):
-    #     self.Faces = self.findFaces()
-    #     self.initFaces = self.faces2init()
-    #     self.nFaces = len(self.Faces)
-    #     self.nEdges = max_value(self.b)
-    #     self.Edges = range(self.nEdges)
-    #     self.Vertices = self.b + self.w
-    #     self.nVertices = len(self.b) + len(self.w)
-    #     self.EulerChi = self.nVertices - self.nEdges + self.nFaces
+    def calcEulerChi(self):
+        p = self.b * self.w
+        self.nFaces = len(p.cyclic_form)
+        self.nEdges = max_value(self.b)
+        # self.Edges = range(self.nEdges)
+        # self.Vertices = self.b + self.w
+        self.nVertices = len(self.b) + len(self.w)
+        self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
-    def printEulerCharacteristic(self):
-        print(f"Faces: {readableNestedList(self.Faces)}")
-        print(f"Initial edges: {self.initFaces}")
+    def printEulerChi(self):
+        if not hasattr(self, 'EulerChi'):
+            self.calcEulerChi
+        # print(f"Faces: {readableNestedList(self.Faces)}")
+        # print(f"Initial edges: {self.initFaces}")
         print(f"No. faces: {self.nFaces}")
         print(f"No. edges: {self.nEdges}")
         print(f"No. vertices: {self.nVertices}")
         print(f"Euler Characteristic: {self.EulerChi}")
 
+    # def isConnected2(self):
+    #     # For a proper subset B of cycles of b, let S be the edge set of B and
+    #     # for a proper subset W of cycles of w, let T be the edge set of W.
+    #     # If any S = T, the dessin is disconnected. If all S \neq T, it is connected.
+    #     bPowerSet = list(powerset(self.b))[1:-1]
+    #     wPowerSet = list(powerset(self.w))[1:-1]
+    #     bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
+    #     wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
+    #     return all(x not in bSubsets for x in wSubsets)
+    
     def isConnected(self):
-        # For a proper subset B of cycles of b, let S be the edge set of B and
-        # for a proper subset W of cycles of w, let T be the edge set of W.
-        # If any S = T, the dessin is disconnected. If all S \neq T, it is connected.
-        bPowerSet = list(powerset(self.b))[1:-1]
-        wPowerSet = list(powerset(self.w))[1:-1]
-        bSubsets = [{item for sublist in subset for item in sublist} for subset in bPowerSet]
-        wSubsets = [{item for sublist in subset for item in sublist} for subset in wPowerSet]
-        return all(x not in bSubsets for x in wSubsets)
+        """Check if the dessin is connected using BFS traversal."""
+        # Build adjacency: each edge is a node, connect via black and white cycles
+        n = max(self.b.array_form)+1
+        queue = [0]
+        visited = {0}
+        # Build adjacency for each edge
+        adj = [[] for _ in range(n)]
+        for cycle in self.b.cyclic_form:
+            for i in range(len(cycle)):
+                a, b = cycle[i], cycle[(i+1)%len(cycle)]
+                adj[a].append(b)
+                adj[b].append(a)
+        for cycle in self.w.cyclic_form:
+            for i in range(len(cycle)):
+                a, b = cycle[i], cycle[(i+1)%len(cycle)]
+                adj[a].append(b)
+                adj[b].append(a)
+        # BFS
+        while queue:
+            node = queue.pop(0)
+            for neighbor in adj[node]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append(neighbor)
+        return len(visited) == n
