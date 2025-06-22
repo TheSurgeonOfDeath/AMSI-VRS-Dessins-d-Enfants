@@ -77,17 +77,16 @@ class Dessin:
         return [f[0] for f in self.Faces]
 
     def calcEulerChi(self):
-        p = self.b * self.w
-        self.nFaces = len(p.cyclic_form)
-        self.nEdges = max_value(self.b)
+        self.nFaces = len(self.wb.cyclic_form)
+        self.nEdges = max(self.b.array_form) + 1
         # self.Edges = range(self.nEdges)
         # self.Vertices = self.b + self.w
-        self.nVertices = len(self.b) + len(self.w)
+        self.nVertices = len(self.b.cyclic_form) + len(self.w.cyclic_form)
         self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
     def printEulerChi(self):
         if not hasattr(self, 'EulerChi'):
-            self.calcEulerChi
+            self.calcEulerChi()
         # print(f"Faces: {readableNestedList(self.Faces)}")
         # print(f"Initial edges: {self.initFaces}")
         print(f"No. faces: {self.nFaces}")
