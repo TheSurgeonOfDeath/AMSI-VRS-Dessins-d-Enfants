@@ -10,6 +10,11 @@ from sympy.combinatorics import Permutation
 from sympy import init_printing
 init_printing(perm_cyclic=True, pretty_print=False)
 
+# p = Permutation(0)
+
+# symDes = Dessin(p,p)
+
+
 # fat square
 fb = Permutation(1,2,0,3)(5,6,4,7)
 fw = Permutation(0,6,1,7)(3,4,2,5)

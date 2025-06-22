@@ -1,36 +1,87 @@
 # Module for dessins
 
-from itertools import product
+import json
 from readableNestedList import readableNestedList
-from itertools import chain, combinations
+from itertools import chain, combinations, permutations, combinations_with_replacement, product
+import random
+from unique_permutations import unique_permutations
+import numpy as np
+from multiprocessing import Pool
 
 # Note: Permutations are applied left to right by SymPy as opposed to traditional mathematics
 from sympy.combinatorics import Permutation
 
-def max_value(inputlist):
-    return max(max(sublist) for sublist in inputlist)
+
+from sympy import sieve, prime
+primes = list(sieve.primerange(100))
+
 
 def isMorphism(alpha, F, G):
+    if F.nEdges % G.nEdges != 0:
+        return False
     for e in range(len(alpha)):
-    #alpha fb = gb alpha
+        # alpha fb = gb alpha
         if alpha[F.b(e)] != G.b(alpha[e]):
-            return(False)
+            return False
         elif alpha[F.w(e)] != G.w(alpha[e]):
-            return(False)
-    return(True)
+            return False
+    return True
 
 def findMorphisms(F, G):
-    nEdgesF = max_value(F.b)
-    nEdgesG = max_value(G.b)
-    Maps = list(product(range(nEdgesG), repeat = nEdgesF))
-    surjMaps = [Map for Map in Maps if set(range(nEdgesG)) <= set(Map)]
+    Maps = list(product(range(G.nEdges), repeat = F.nEdges))
+    surjMaps = [Map for Map in Maps if set(range(G.nEdges)) <= set(Map)]
     return [surjMap for surjMap in surjMaps if isMorphism(surjMap, F, G)]
 
-def powerset(iterable):
-    # source: https://docs.python.org/3/library/itertools.html#itertools-recipes
-    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
-    s = list(iterable)
-    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
+def areIsomorphic(F, G):
+    if F.nEdges != G.nEdges: #or len(F.b) != len(G.b) or len(F.w) != len(G.w):
+        return False
+    alphas = permutations(F.Edges)
+    return any(isMorphism(alpha, F, G) for alpha in alphas)
+
+# def powerset(iterable):
+#     # source: https://docs.python.org/3/library/itertools.html#itertools-recipes
+#     "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+#     s = list(iterable)
+#     return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
+
+
+def generate_dessins_single(n):
+    SnCycles = [Permutation(perm) for perm in permutations(range(n))]
+
+    # list of pairs of permutations (in cyclic form) in Sn
+    SnCyclesSquared = list(combinations(SnCycles, 2))
+
+    # symmetric dessin - repeated combination
+    permOfSymDes = Permutation([range(n)])
+    symDes = Dessin(permOfSymDes, permOfSymDes)
+    
+    # generate unique dessins
+    dessins = {symDes.semiID: [symDes]}
+
+    # adds unique dessins to dict dessins
+    def addedDes(des):
+        dessinsWithSameSemiID = dessins.get(des.semiID)
+        if dessinsWithSameSemiID is None:
+            dessins[des.semiID] = [des]
+            return True
+        elif not any(areIsomorphic(des, d) for d in dessinsWithSameSemiID):
+            dessinsWithSameSemiID.append(des)
+            return True
+        return False
+
+    for pair in SnCyclesSquared:
+        des = Dessin(pair[0], pair[1])
+        if not des.isConnected():
+            continue
+        
+        # add des if unique
+        if addedDes(des):
+            # Check opposite colouring of des
+            desOp = Dessin(pair[1], pair[0])
+            addedDes(desOp) 
+    return list(chain(*dessins.values()))
+
+
 
 
 class Dessin:
@@ -42,13 +93,26 @@ class Dessin:
         self.mono = [b, w]
         self.monoStr = ['b', 'w']
 
+        # semiID (because not entirely unique)
+        self.semiID = (int(np.prod([primes[len(i)] for i in b.full_cyclic_form])), int(np.prod([primes[len(i)] for i in w.full_cyclic_form])))
+
+        # edges
+        self.nEdges = len(self.b.array_form)
+        self.Edges = range(self.nEdges)
+
+        # vertices
+        self.Vertices = self.b.cyclic_form + self.w.cyclic_form
+        self.nVertices = len(self.Vertices)
+
+        # faces
+        self.nFaces = len(self.wb.cyclic_form)
+
     def perm2str(self, perm):
-        return self.monoStr[self.mono.index(perm)];
+        return self.monoStr[self.mono.index(perm)]
 
     def findFaces(self):
         faces = []
-        nEdges = max_value(self.b)
-        for e in range(nEdges):
+        for e in range(self.nEdges):
             for d in self.mono:
                 face = []
                 f0 = (e, self.perm2str(d))
@@ -78,10 +142,6 @@ class Dessin:
 
     def calcEulerChi(self):
         self.nFaces = len(self.wb.cyclic_form)
-        self.nEdges = max(self.b.array_form) + 1
-        # self.Edges = range(self.nEdges)
-        # self.Vertices = self.b + self.w
-        self.nVertices = len(self.b.cyclic_form) + len(self.w.cyclic_form)
         self.EulerChi = self.nVertices - self.nEdges + self.nFaces
 
     def printEulerChi(self):
@@ -107,11 +167,10 @@ class Dessin:
     def isConnected(self):
         """Check if the dessin is connected using BFS traversal."""
         # Build adjacency: each edge is a node, connect via black and white cycles
-        n = max(self.b.array_form)+1
         queue = [0]
         visited = {0}
         # Build adjacency for each edge
-        adj = [[] for _ in range(n)]
+        adj = [[] for _ in range(self.nEdges)]
         for cycle in self.b.cyclic_form:
             for i in range(len(cycle)):
                 a, b = cycle[i], cycle[(i+1)%len(cycle)]
@@ -129,4 +188,8 @@ class Dessin:
                 if neighbor not in visited:
                     visited.add(neighbor)
                     queue.append(neighbor)
-        return len(visited) == n
+        return len(visited) == self.nEdges
+    
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__,
+            sort_keys=True, indent=4)
