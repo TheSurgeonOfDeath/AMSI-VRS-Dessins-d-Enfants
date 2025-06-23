@@ -99,11 +99,11 @@ def areIsomorphic(F, G):
     if F.nEdges != G.nEdges: #or len(F.b) != len(G.b) or len(F.w) != len(G.w):
         return False
     
-    # def len_items(list_of_lists):
-    #     return [len(list) for list in list_of_lists]
+    def len_items(list_of_lists):
+        return {len(list) for list in list_of_lists}
     
-    # if len_items(F.b) != len_items(G.b) or len_items(F.w) != len_items(G.w):
-    #     return False
+    if len_items(F.b) != len_items(G.b) or len_items(F.w) != len_items(G.w):
+        return False
     # FG = dessin_to_networkx(F)
     # GG = dessin_to_networkx(G)
     # GM = nx.isomorphism.GraphMatcher(FG, GG)
@@ -147,7 +147,86 @@ def areIsomorphic(F, G):
 
 #     return list(chain(*dessins))
 
+def generate_dessins_single4(n):
+    SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n + 1))]
+    SnCyclesSquared = combinations(SnCycles, 2)
+
+    permOfSymDes = [tuple(range(1, n + 1))]
+    symDes = Dessin(permOfSymDes, permOfSymDes)
+
+    dessins = {symDes.semiID: [symDes]}
+    dessin_hashes = {symDes.semiID: {hash((tuple(map(tuple, symDes.b)), tuple(map(tuple, symDes.w))))}}
+
+    def addIfNew(dessin):
+        semiID = dessin.semiID
+        h = hash((tuple(map(tuple, dessin.b)), tuple(map(tuple, dessin.w))))
+        existing = dessins.get(semiID)
+        if existing is None:
+            dessins[semiID] = [dessin]
+            dessin_hashes[semiID] = {h}
+            return True
+        if h not in dessin_hashes[semiID] and not any(areIsomorphic(dessin, d) for d in existing):
+            existing.append(dessin)
+            dessin_hashes[semiID].add(h)
+            return True
+        return False
+
+    for pair in SnCyclesSquared:
+        des = Dessin(pair[0], pair[1])
+        if des.isConnected() and addIfNew(des):
+            desOp = Dessin(pair[1], pair[0])
+            addIfNew(desOp)
+
+    return list(chain(*dessins.values()))
+
 from multiprocessing import Pool, cpu_count
+
+def _process_dessin_pair(pair):
+    """Generate connected dessins from a pair and its opposite if connected."""
+    results = []
+    des = Dessin(pair[0], pair[1])
+    if des.isConnected():
+        results.append(des)
+    des_op = Dessin(pair[1], pair[0])
+    if des_op.isConnected():
+        results.append(des_op)
+    return results
+
+def generate_dessins_single_fast(n):
+    SnCycles = [array2cyclic(perm) for perm in permutations(range(1, n + 1))]
+    SnCyclesSquared = list(combinations(SnCycles, 2))
+
+    # Include the symmetric dessin (identity, identity)
+    permOfSymDes = [tuple(range(1, n + 1))]
+    symDes = Dessin(permOfSymDes, permOfSymDes)
+    dessins = {symDes.semiID: [symDes]}
+    dessin_hashes = {symDes.semiID: {hash((tuple(map(tuple, symDes.b)), tuple(map(tuple, symDes.w))))}}
+
+    def addIfNew(dessin):
+        semiID = dessin.semiID
+        h = hash((tuple(map(tuple, dessin.b)), tuple(map(tuple, dessin.w))))
+        existing = dessins.get(semiID)
+        if existing is None:
+            dessins[semiID] = [dessin]
+            dessin_hashes[semiID] = {h}
+            return True
+        if h not in dessin_hashes[semiID] and not any(areIsomorphic(dessin, d) for d in existing):
+            existing.append(dessin)
+            dessin_hashes[semiID].add(h)
+            return True
+        return False
+
+    # Use multiprocessing to evaluate valid connected dessins
+    with Pool(processes=min(cpu_count(), 8)) as pool:
+        all_dessins = pool.map(_process_dessin_pair, SnCyclesSquared)
+
+    # Flatten and filter
+    for dessin_list in all_dessins:
+        for des in dessin_list:
+            addIfNew(des)
+
+    return list(chain(*dessins.values()))
+
 
 def _process_pair_for_dessin(pair):
     # This must be at module level for pickling!
