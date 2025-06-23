@@ -15,16 +15,16 @@ import jsonpickle
 # print(score2)
 
 # order
-n = 5
+n = 6
 
 # Generate dessins
-tic = time.perf_counter()
-dessins = generate_dessins_single(n)
-print(len(dessins))
-for des in dessins:
-    des.calcEulerChi()
-toc = time.perf_counter()
-print(f"Generating time: {toc - tic:0.4f} seconds")
+# tic = time.perf_counter()
+# dessins = generate_dessins_single(n)
+# print(len(dessins))
+# for des in dessins:
+#     des.calcEulerChi()
+# toc = time.perf_counter()
+# print(f"Generating time: {toc - tic:0.4f} seconds")
 
 tic = time.perf_counter()
 dessins = generate_dessins_single2(n)
@@ -34,13 +34,13 @@ for des in dessins:
 toc = time.perf_counter()
 print(f"Generating time: {toc - tic:0.4f} seconds")
 
-tic = time.perf_counter()
-dessins = generate_dessins_single3(n)
-print(len(dessins))
-for des in dessins:
-    des.calcEulerChi()
-toc = time.perf_counter()
-print(f"Generating time: {toc - tic:0.4f} seconds")
+# tic = time.perf_counter()
+# dessins = generate_dessins_single3(n)
+# print(len(dessins))
+# for des in dessins:
+#     des.calcEulerChi()
+# toc = time.perf_counter()
+# print(f"Generating time: {toc - tic:0.4f} seconds")
 
 
 
